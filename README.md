@@ -36,16 +36,18 @@ Note:Het kan zijn dat de code generatie van deze site niet de meest actuele is. 
 Via de volgende website kun je JSON eenvoudig tegen YAML-specificaties latenvalideren: http://www.jsonschemavalidator.net/ 
 
 # Documentatie
-##### Opgeleverde YAML-specificaties
-- Opvragen BRP (categorie 1&8)
-- Opvragen HR 
+##### Opgeleverde specificaties
+- [WORD] Opvragen BRP-gegevens
+- [WORD] Opvragen HR-gegevens 
+- [YAML] Opvragen BRP-gegevens (categorie 1&8)
 
-##### Binnenkort op te leveren YAML-specificaties
-- Opvragen BRP (alle overige API's binnen deze EPS) 
+##### Binnenkort op te leveren specificaties
+- [YAML] Opvragen HR-gegevens 
+- [YAML] Opvragen BRP-gegevens (alle overige API's binnen deze EPS) 
 
-##### Backlog op te leveren YAML-specificaties
-- Opvragen BAG
-- Zaak-Documentservices
+##### Backlog op te leveren specificaties
+- [WORD/YAML] Opvragen BAG-gegevens
+- [WORD/YAML] Zaak-Documentservices
 
 ##### Documentatie die nog opgesteld moet worden
 - Foutafhandeling
