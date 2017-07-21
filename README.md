@@ -47,7 +47,8 @@ Via de volgende website kun je JSON eenvoudig tegen YAML-specificaties latenvali
 - Zaak-Documentservices
 
 # Documentatie die nog opgesteld moet worden
-- Foutafhandeling- Plan tot productiename- 
+- Foutafhandeling
+- Plan tot productiename
 
 
 
