@@ -18,7 +18,7 @@ Met het omarmen van het advies gaat KING koersen richting een nieuwe StUF. Veel 
 Drechtsteden zelf is er daarnaast van overtuigd dat op deze wijze de koppelvlakken wel op 1 januari 2018 gerealiseerd kunnen zijn.
 
 # JSON/YAML
-Berichtenverkeer dat conform deze aanpakwordt opgezet is gebaseerd op JSON webservices. Om tussen software-leveranciers misinterpretatie te voorkomen wordtvia YAML een specificatie opgesteld. Met een YAML specificatie is het mogelijk om JSON webservices te genereren.
+Berichtenverkeer dat conform deze aanpak wordt opgezet is gebaseerd op JSON webservices. Om tussen software-leveranciers misinterpretatie te voorkomen wordt via YAML een specificatie opgesteld. Met een YAML specificatie is het mogelijk om JSON webservices te genereren.
 
 ##### JSON
 Een JSON API is uitermate geschikt voor de communicatie met mobiele devices en IoT toepassingen van afnemers.  
@@ -31,7 +31,7 @@ YAML-specificatie kunnen gemaakt worden op basis van Open API Specification (OAS
 Als je de specificatie bijvoorbeeld in http://editor.swagger.io/#/  kopieert, dan zie je direct een JSON-response voorbeeld. Er kan ook direct code worden gegenereerd voor allerlei talen voor zowel de client als de server kant.
 
 ##### Code generatie vanuit YAML
-De meest eenvoudige manier is om naar https://swagger.io/ te gaan en de YAML-specificatie hier in te openen en kiezen bij Generate Server voor het juiste platform.  Dit lijkt tot een skeleton voor de implementatie van de webservice. Hoe dit kan worden ingepast in de code van een software-leverancier is aan de leverancier zelf.
+De meest eenvoudige manier is om naar https://swagger.io/ te gaan en de YAML-specificatie hier in te openen en kiezen bij Generate Server voor het juiste platform. Dit lijkt tot een skeleton voor de implementatie van de webservice. Hoe dit kan worden ingepast in de code van een software-leverancier is aan de leverancier zelf.
 Note: Het kan zijn dat de code generatie van deze site niet de meest actuele is. Het onderstaande java project bevat altijd de meest actuele versie van de code. Je moet dan wel java hebben om de code ook voor andere platformen (zoals .NET) te genereren. https://github.com/swagger-api/swagger-codegen https://github.com/swagger-api/swagger-codegen/wiki/Server-stub-generator-HOWTO 
 Via de volgende website kun je JSON eenvoudig tegen YAML-specificaties laten valideren: http://www.jsonschemavalidator.net/ 
 
