@@ -2,7 +2,7 @@
 De behoefte van Gemeenschappelijk Regeling Drechtsteden is om per 1 januari 2018alle koppelvlakken gerealiseerd te hebben. Het realiseren van koppelvlakkenbetekent voor Drechtsteden dat alle applicaties gegevens uitwisselen met elkaarvia de centrale servicebus van Vicrea. De centrale voorziening waar deservicebus onderdeel van uitmaakt wordt binnen Drechtsteden aangeduid met determ "CDV". Met de snelheid waarmee gemiddeld genomen huidigeStUF-koppelvlakken gerealiseerd worden binnen Drechtsteden wordt de datum 1januari 2018 zeker niet gehaald. Dit vraagt om een andere aanpak.
 
 # Aanpak
-De aanpak die Drechtsteden kiest is in lijn met het advies dat Solventa inopdracht van KING begin 2017 heeft uitgebracht over het opstellen vanEindproductstandaarden ter vervanging van StUF-BG en StUF-ZKN (zie http://www.gemmaonline.nl/images/gemmaonline/0/08/Eindproductstandaarden_-_vervanging_StUF-BG_en_StUF-ZKN.pdf).Hieronder een opsomming van de voordelen van Eindproductstandaarden die in ditadvies benoemd worden:
+De aanpak die Drechtsteden kiest is in lijn met het advies dat Solventa inopdracht van KING begin 2017 heeft uitgebracht over het opstellen vanEindproductstandaarden ter vervanging van StUF-BG en StUF-ZKN (zie http://www.gemmaonline.nl/images/gemmaonline/0/08/Eindproductstandaarden_-_vervanging_StUF-BG_en_StUF-ZKN.pdf). Hieronder een opsomming van de voordelen van Eindproductstandaarden die in ditadvies benoemd worden:
 
 - Eindproductstandaarden kunnen in hoger tempo worden opgesteld door KING.
 - Aanbieders van applicaties kunnen eenvoudiger/goedkoper aan. eindproductstandaardenvoldoen aangezien deze minder complex zijn.
