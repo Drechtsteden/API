@@ -53,7 +53,9 @@ Via de volgende website kun je JSON eenvoudig tegen YAML-specificaties laten val
 - Foutafhandeling
 - Plan tot productiename
 
+---
 
+Heb je vragen of opmerkingen over dit traject: mail naar Dennis de Wit (d.de.wit@drechtsteden.nl).
 
 
 
