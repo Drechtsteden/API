@@ -1,0 +1,299 @@
+swagger: '2.0'
+info:
+  description: Specificatie StUF Json opvragen persoonsgegevens
+  version: 1.0.0
+  title: NNP
+  contact: {}
+host: zaaksysteem.greenvalley.nl
+basePath: /bg
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  '/natuurlijkpersoon/{bsn}':
+    get:
+      summary: opvragen persoonsgegevens
+      description: 'Vraagt de gegevens van een natuurlijk persoon op. '
+      produces:
+        - application/json
+      parameters:
+        - name: zender
+          in: header
+          required: false
+          type: string
+        - name: ontvanger
+          in: header
+          required: false
+          type: string
+        - name: parameters
+          in: header
+          required: false
+          type: string
+        - name: referentienummer
+          in: header
+          required: false
+          type: string
+        - name: tijdstipbericht
+          in: header
+          required: false
+          type: string
+        - name: crossRefnummer
+          in: header
+          required: false
+          type: string
+        - name: entiteittype
+          in: header
+          required: false
+          type: string
+      responses:
+        '200':
+          description: Gelukt
+          schema:
+            type: object
+            properties:
+              persoon:
+                $ref: '#/definitions/NatuurlijkPersoon'
+    parameters:
+      - name: bsn
+        in: path
+        required: true
+        type: string
+  /natuurlijkpersoon/findbyPersoon:
+    get:
+      summary: zoeken op persoonsgegevens
+      description: 'Zoekt een collectie van personen '
+      produces:
+        - application/json
+      parameters:
+        - name: achternaam
+          in: query
+          required: false
+          type: string
+        - name: geboortedatum
+          in: query
+          required: false
+          type: string
+        - name: voorletters
+          in: query
+          required: false
+          type: string
+        - name: zender
+          in: header
+          required: false
+          type: string
+        - name: ontvanger
+          in: header
+          required: false
+          type: string
+        - name: parameters
+          in: header
+          required: false
+          type: string
+        - name: referentienummer
+          in: header
+          required: false
+          type: string
+        - name: tijdstipbericht
+          in: header
+          required: false
+          type: string
+        - name: crossRefnummer
+          in: header
+          required: false
+          type: string
+        - name: entiteittype
+          in: header
+          required: false
+          type: string
+      responses:
+        '200':
+          description: Gelukt
+          schema:
+            type: object
+            properties:
+              persoon:
+                $ref: '#/definitions/NatuurlijkPersoon'
+definitions:
+  NatuurlijkPersoon:
+    type: object
+    properties:
+      bsn:
+        type: string
+        description: burgerservicenummer
+        minLength: 8
+        maxLength: 9
+      authentiek:
+        type: boolean
+      a-nummer:
+        type: string
+      geslachtsnaam:
+        type: string
+        maxLength: 200
+      voorvoegselGeslachtsnaam:
+        type: string
+        maxLength: 10
+      voorletters:
+        type: string
+        maxLength: 20
+      voornamen:
+        type: string
+        maxLength: 200
+      aanduidingNaamgebruik:
+        type: string
+        enum:
+              - E
+              - V
+              - P
+              - N
+      geslachtsnaamPartner:
+        type: string
+        maxLength: 200
+      voornamenAanschrijving:
+        type: string
+        maxLength: 200
+      geslachtsnaamAanschrijving:
+        type: string
+        maxLength: 200
+      adellijkeTitelPredikaat:
+        type: string
+      geslachtsaanduiding:
+        type: string
+        enum:
+            - V
+            - M
+            - O
+      geboortedatum:
+        type: integer
+        maxLength: 8
+        description: 'datum kan onvolledig zijn, daarom integer'
+      geboorteplaats:
+        type: string
+        maxLength: 40
+      geboorteLand:
+        type: integer
+        maxLength: 4
+      overlijdensdatum:
+        type: integer
+        maxLength: 8
+      overlijdenPlaats:
+        type: string
+        maxLength: 20
+      overlijdenLand:
+        type: string
+        maxLength: 4
+      verblijfsAdres:
+        type: object
+        properties:
+          aoaAdres:
+            $ref: '#/definitions/AOAobject'
+          buitenlandsAdres:
+            $ref: '#/definitions/BuitenlandsAdres'
+      correspondentieAdres:
+        type: object
+        properties:
+          aoaAdres:
+            $ref: '#/definitions/AOAobject'
+          buitenlandsAdres:
+            $ref: '#/definitions/BuitenlandsAdres'
+          postadresType:
+            type: string
+            enum:
+              - postbus
+              - antwoordnummer
+          postadresNummer:
+            type: string
+
+      telefoonnummer:
+        type: string
+      faxnummer:
+        type: string
+      emailadres:
+        type: string
+      url:
+        type: string
+      acd.code:
+        type: array
+        items:
+          type: string
+      burgerlijkeStaat:
+        type: string
+        enum:
+          - Gehuwd
+          - Alleenstaand
+          - etc
+      gemeenteVanInschrijving:
+        type: integer
+      datumInschrijving:
+        type: string
+        format: date
+      aanduidingVerblijfstitel:
+        type: string
+      datumVerkrijgingVerblijfstitel:
+        type: string
+      datumVestigingInNederland:
+        type: string
+      immigratieLand:
+        type: string
+      datumVertrekUitNederland:
+        type: string
+      emigratieLand:
+        type: string
+      signaleringReisdocument:
+        type: string
+      aanduidingBijzonderNederlanderschap:
+        type: string
+      buitenlandsReisdocument:
+        type: string
+      datumOpschortingBijhouding:
+        type: string
+      redenOpschortingBijhouding:
+        type: string
+      indicatieGeheim:
+        type: integer
+        minimum: 0
+        maximum: 7
+      indicatieBlokkering:
+        type: string
+      inOnderzoek:
+        type: string
+  AOAobject:
+    type: object
+    properties:
+      aoa.identificatie:
+        type: number
+      postcode:
+        type: string
+        minLength: 6
+        maxLength: 6
+        pattern: 9999NN
+      huisnummer:
+        type: integer
+        minimum: 1
+      huisletter:
+        type: string
+      huisnummertoevoeging:
+        type: string
+      openbareRuimteNaam:
+        type: string
+      straatnaam:
+        type: string
+      wpl.identificatie:
+        type: string
+      wpl.woonplaatsNaam:
+        type: string
+  BuitenlandsAdres:
+    type: object
+    properties:
+      buitenlandsadres1:
+        type: string
+      buitenlandsadres2:
+        type: string
+      buitenlandsadres3:
+        type: string
+      landnaam:
+        type: string
+      landcode:
+        type: integer
