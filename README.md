@@ -21,7 +21,7 @@ Drechtsteden zelf is er daarnaast van overtuigd dat op deze wijze de koppelvlakk
 Berichtenverkeer dat conform deze aanpak wordt opgezet is gebaseerd op JSON webservices. Om tussen software-leveranciers misinterpretatie te voorkomen wordt via YAML een specificatie opgesteld. Met een YAML specificatie is het mogelijk om JSON webservices te genereren.
 
 ##### JSON
-Een JSON API is uitermate geschikt voor de communicatie met mobiele devices en IoT toepassingen van afnemers.  
+JSON is een gestandaardiseerd gegevensformaat. JSON maakt gebruik van voor de mens leesbare tekst in de vorm van data-objecten die bestaan uit een of meer attributen met bijbehorende waarde. Het wordt hoofdzakelijk gebruikt voor uitwisseling van data tussen server en webapplicatie, als een alternatief voor xml. Daarmee is een JSON API uitermate geschikt voor de communicatie met mobiele devices en IoT toepassingen van afnemers.  
 
 ##### YAML
 YAML is ontwikkeld vanuit oogpunt van menselijke leesbaarheid en uitbreidbaarheid. YAML is dan ook goed voor mensen leesbaar, mede door de verplichte witruimtes in regels om structuur aan tegeven. YAML ondersteunt default object referenties en relationele structuren. Dit maakt het mogelijk om in YAML net als in XML eenvoudig cyclische datastructuren met diepe hiërarchie vast te leggen. YAML is geen XML, maar kent door de efficiëntere structuur wel een aantal grote voordelen boven XML. Op basis van YAML gegenereerde JSON, moet dan nog wel in de software worden geplaatst door de leverancier. Dit kost zeker ook nog wel ontwikkeltijd, maar het is veel efficiënter en laat minder ruimte voor misinterpretatie dan de wijze waarop momenteel StUF wordt ingepast in de software. Precies op dit punt kan de inzet van YAML dus meerwaarde opleveren. Het is dus niet het idee dat JSON services dan alsnog handmatig worden gerealiseerd.
@@ -40,9 +40,9 @@ Via de volgende website kun je JSON eenvoudig tegen YAML-specificaties laten val
 - [WORD] Opvragen BRP-gegevens
 - [WORD] Opvragen HR-gegevens 
 - [YAML] Opvragen BRP-gegevens (categorie 1&8)
+- [YAML] Opvragen HR-gegevens 
 
 ##### Binnenkort op te leveren specificaties
-- [YAML] Opvragen HR-gegevens 
 - [YAML] Opvragen BRP-gegevens (alle overige API's binnen deze EPS) 
 
 ##### Backlog op te leveren specificaties
