@@ -35,6 +35,14 @@ De meest eenvoudige manier is om naar https://swagger.io/ te gaan en de YAML-spe
 Note: Het kan zijn dat de code generatie van deze site niet de meest actuele is. Het onderstaande java project bevat altijd de meest actuele versie van de code. Je moet dan wel java hebben om de code ook voor andere platformen (zoals .NET) te genereren. https://github.com/swagger-api/swagger-codegen https://github.com/swagger-api/swagger-codegen/wiki/Server-stub-generator-HOWTO 
 Via de volgende website kun je JSON eenvoudig tegen YAML-specificaties laten valideren: http://www.jsonschemavalidator.net/ 
 
+# Werkwijze
+
+- Functionele specificities worden opgesteld door Drechtsteden, gereviewd door leveranciers en op Github geplaatst.
+- YAML specificities worden opgesteld door Vicrea, gereviewd door Drechtsteden en Green Valley en op Github geplaatst.
+- Vicrea en Green Valley zorgen op basis van YAML specificatie voor het opnemen van de functionaliteit in de software (conform de
+beschrijving op Github).
+- Voorbeeldberichten worden op Github geplaatst.
+
 # Documentatie
 ##### Opgeleverde specificaties
 - [WORD] Opvragen BRP-gegevens
