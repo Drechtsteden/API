@@ -45,8 +45,8 @@ beschrijving op Github).
 
 # Documentatie
 ##### Opgeleverde specificaties
-- [WORD] Opvragen BRP-gegevens
-- [WORD] Opvragen HR-gegevens 
+- [Functionele specificatie] Opvragen BRP-gegevens
+- [Functionele specificatie] Opvragen HR-gegevens 
 - [YAML] Opvragen BRP-gegevens (categorie 1&8)
 - [YAML] Opvragen HR-gegevens 
 
@@ -54,8 +54,8 @@ beschrijving op Github).
 - [YAML] Opvragen BRP-gegevens (alle overige API's binnen deze EPS) 
 
 ##### Backlog op te leveren specificaties
-- [WORD/YAML] Opvragen BAG-gegevens
-- [WORD/YAML] Zaak-Documentservices
+- [Functionele specificatie/YAML] Opvragen BAG-gegevens
+- [Functionele specificatie/YAML] Zaak-Documentservices
 
 ##### Documentatie die nog opgesteld moet worden
 - Foutafhandeling
