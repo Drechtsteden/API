@@ -37,8 +37,8 @@ Via de volgende website kun je JSON eenvoudig tegen YAML-specificaties laten val
 
 # Werkwijze
 
-- Functionele specificities worden opgesteld door Drechtsteden, gereviewd door leveranciers en op Github geplaatst.
-- YAML specificities worden opgesteld door Vicrea, gereviewd door Drechtsteden en Green Valley en op Github geplaatst.
+- Functionele specificitie wordt opgesteld door Drechtsteden, gereviewd door leveranciers en na overeenstemming op Github geplaatst.
+- YAML specificitie wordt opgesteld door Vicrea, gereviewd door Drechtsteden en Green Valley en na overeenstemming op Github geplaatst.
 - Vicrea en Green Valley zorgen op basis van YAML specificatie voor het opnemen van de functionaliteit in de software (conform de
 beschrijving op Github).
 - Voorbeeldberichten worden op Github geplaatst.
