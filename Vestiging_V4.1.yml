@@ -1,0 +1,361 @@
+swagger: '2.0'
+info:
+  description: Specificatie StUF Json opvragen Vestingen
+  version: 1.0.0
+  title: ves
+  contact: {}
+host: zaaksysteem.greenvalley.nl
+basePath: /bg
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /Vestiging/ZoekVestigingOpHandelsnaam:
+    get:
+      summary: >-
+        Zoek vestiging op handelsnaam.
+      description: 'Zoek vestiging op handelsnaam.'
+      consumes: []
+      produces:
+        - application/json
+      parameters:
+        - name: zender
+          in: header
+          required: false
+          type: string
+        - name: ontvanger
+          in: header
+          required: false
+          type: string
+        - name: parameters
+          in: header
+          required: false
+          type: string
+        - name: referentienummer
+          in: header
+          required: false
+          type: string
+        - name: tijdstipbericht
+          in: header
+          required: false
+          type: string
+        - name: crossRefnummer
+          in: header
+          required: false
+          type: string
+        - name: entiteittype
+          in: header
+          required: false
+          type: string
+      responses:
+        '200':
+          description: Gelukt
+          schema:
+            type: object
+            properties:
+              persoon:
+                $ref: '#/definitions/Vestiging'
+    parameters:
+        - name: handelsnaam
+          in: query
+          description: 'De naam waaronder de onderneming handelt.'
+          required: true
+          type: string
+        - name: inclusiefBeeindigdeVestigingen
+          in: query
+          description: ''
+          required: true
+          type: boolean
+  /Vestiging/ZoekVestigingOpKvKnummer:
+    get:
+      summary: >-
+        Zoek vestiging op Kvk nummer.
+      description: 'Zoek vestiging op Kvk nummer.'
+      consumes: []
+      produces:
+        - application/json
+      parameters:
+        - name: kvkNummer
+          in: query
+          description: 'Landelijk uniek identificerend administratienummer van een MAATSCHAPPELIJKE ACTIVITEIT zoals toegewezen door de Kamer van Koophandel (KvK).'
+          required: true
+          type: string
+        - name: inclusiefBeeindigdeVestigingen
+          in: query
+          description: ''
+          required: true
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Vestiging'
+  /Vestiging/ZoekVestigingOpNummeraanduiding:
+    get:
+      summary: >-
+        Zoek vestiging op nummer aanduiding.
+      description: 'Zoek vestiging op nummer aanduiding.'
+      produces:
+        - application/json
+      parameters:
+        - name: nummeraanduidingIdentificatie
+          in: query
+          description: 'De identificatiecodes nummeraanduiding waaronder nevenadressen van een STANDPLAATS, die in het kader van de basisregistratie gebouwen als zodanig zijn aangemerkt, zijn opgenomen in de basisregistratie adressen.'
+          required: true
+          type: string
+        - name: inclusiefBeeindigdeVestigingen
+          in: query
+          description: ''
+          required: true
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Vestiging'
+  /Vestiging/ZoekVestigingOpBinnenlandsVestigingsadres:
+    get:
+      summary: >-
+        Zoek vestiging op Binnenlandsvestingsadres.
+      description: 'Zoek vestiging op Binnenlandsvestingsadres.'
+      consumes: []
+      produces:
+        - application/json
+      parameters:
+        - name: woonplaatsnaam
+          in: query
+          description: 'De door het bevoegde gemeentelijke orgaan aan een WOONPLAATS toegekende benaming.'                    
+          required: true
+          type: string
+        - name: openbareRuimteNaam
+          in: query
+          description: 'Een door het bevoegde gemeentelijke orgaan aan een GEMEENTELIJKE OPENBARE RUIMTE toegekende benaming.'
+          required: true
+          type: string
+        - name: huisnummer
+          in: query
+          description: 'Een door of namens het bevoegd gemeentelijk orgaan ten aanzien van een adresseerbaar object toegekende nummering.'
+          required: true
+          type: integer
+          format: int32
+        - name: huisletter
+          in: query
+          description: 'Een door of namens het bevoegd gemeentelijk orgaan ten aanzien van een adresseerbaar object toegekende toevoeging aan een huisnummer in de vorm van een alfanumeriek teken.'
+          required: false
+          type: string
+        - name: huisnummertoevoeging
+          in: query
+          description: 'Een door of namens het bevoegd gemeentelijk orgaan ten aanzien van een adresseerbaar object toegekende nadere toevoeging aan een huisnummer of een combinatie van huisnummer en huisletter.'
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Vestiging'
+  /Vestiging/ZoekVestigingOpPostcodeHuisnummer:
+    get:
+      summary: >-
+        Zoek vestiging op Postcode en Huisnummer.
+      description: 'Zoek vestiging op Postcode en Huisnummer'
+      consumes: []
+      produces:
+        - application/json
+      parameters:
+        - name: postcode
+          in: query
+          description: 'De door TNT Post vastgestelde code behorende bij een bepaalde combinatie van een naam van een woonplaats, naam van een openbare ruimte en een huisnummer.'
+          required: true
+          type: string
+        - name: huisnummer
+          in: query
+          description: 'Een door of namens het bevoegd gemeentelijk orgaan ten aanzien van een adresseerbaar object toegekende nummering.'
+          required: true
+          type: integer
+          format: int32
+        - name: huisletter
+          in: query
+          description: 'Een door of namens het bevoegd gemeentelijk orgaan ten aanzien van een adresseerbaar object toegekende toevoeging aan een huisnummer in de vorm van een alfanumeriek teken.'
+          required: false
+          type: string
+        - name: huisnummertoevoeging
+          in: query
+          description: 'Een door of namens het bevoegd gemeentelijk orgaan ten aanzien van een adresseerbaar object toegekende nadere toevoeging aan een huisnummer of een combinatie van huisnummer en huisletter.'
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Vestiging'
+  /Vestiging/RaadpleegVestiging:
+    get:
+      summary: >-
+        Zoek vestiging op Raadpleeg vestiging.
+      description: 'Zoek vestiging op Raadpleeg vestiging.'
+      consumes: []
+      produces:
+        - application/json
+      parameters:
+        - name: vestigingsnummer
+          in: query
+          description: 'Landelijk uniek identificerend administratienummer van een VESTIGING zoals toegewezen door de Kamer van Koophandel (KvK).'
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Vestiging'
+definitions:
+  Vestiging:
+    type: object
+    properties:
+      vestigingsNummer:
+        type: string
+      indicatieAuthentiek:
+        type: boolean
+      volgorde:
+        type: integer
+      handelsnaam:
+        type: string
+      handelsnaamVerkort:
+        type: string
+      datumAanvang:
+        format: date-time
+        type: string
+      datumEinde:
+        format: date-time
+        type: string
+      typeringVestiging:
+        enum:
+          - Hoofdvestiging
+          - Nevenvestiging
+        type: string
+      verblijfsAdres:
+        type: object
+        properties:
+          aoaAdres:
+            $ref: '#/definitions/AOAobject'
+      correspondentieAdres:
+        type: object
+        properties:
+          aoaAdres:
+            $ref: '#/definitions/AOAobject'
+          buitenlandsAdres:
+            $ref: '#/definitions/BuitenlandsAdres'
+          postadresType:
+            type: string
+            enum:
+              - postbus
+              - antwoordnummer
+          postadresNummer:
+            type: string
+      telefoonnummer:
+        type: string
+      faxnummer:
+        type: string
+      emailadres:
+        type: string
+      url:
+        type: string
+      bankrekening:
+        $ref: '#/definitions/Bankrekening'
+      kvkNummer:
+        type: object
+        properties:
+          kvkNummer:
+            $ref: '#/definitions/MaatschappelijkeActiviteit'
+  MaatschappelijkeActiviteit:
+    type: object
+    properties:
+      oefentActiviteitenUitVoor:
+        $ref: '#/definitions/MaatschappelijkeActiviteitRelatie'
+  MaatschappelijkeActiviteitRelatie:
+    type: object
+    properties:
+      maatschappelijkeActiviteit:
+        $ref: '#/definitions/MaatschappelijkeActiviteitBeperkt'
+  MaatschappelijkeActiviteitBeperkt:
+    type: object
+    properties:
+      datumAanvang:
+        format: date-time
+        type: string
+      datumVoortzetting:
+        format: date-time
+        type: string
+      kvkNummer:
+        type: string
+      handelsnamen:
+        type: array
+        items:
+          $ref: '#/definitions/Handelsnaam'
+      datumEinde:
+        format: date-time
+        type: string
+  Handelsnaam:
+    type: object
+    properties:
+      handelsnaam:
+        type: string
+      verkorteNaam:
+        type: string
+  AOAobject:
+    type: object
+    properties:
+      aoa.identificatie:
+        type: number
+      postcode:
+        type: string
+        minLength: 6
+        maxLength: 6
+        pattern: 9999NN
+      huisnummer:
+        type: integer
+        minimum: 1
+      huisletter:
+        type: string
+      huisnummertoevoeging:
+        type: string
+      openbareRuimteNaam:
+        type: string
+      straatnaam:
+        type: string
+      wpl.identificatie:
+        type: string
+      wpl.woonplaatsNaam:
+        type: string
+      locatiebeschrijving:
+        type: string
+  BuitenlandsAdres:
+    type: object
+    properties:
+      buitenlandsadres1:
+        type: string
+      buitenlandsadres2:
+        type: string
+      buitenlandsadres3:
+        type: string
+      landnaam:
+        type: string
+      landcode:
+        type: integer   
+  Bankrekening:
+    type: object
+    properties:
+      iban:
+        type: string
+      bic:
+        type: string
