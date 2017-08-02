@@ -51,6 +51,7 @@ beschrijving op Github).
 - [Functionele specificatie] Opvragen MDW-gegevens 
 - [YAML] Opvragen BRP-gegevens (categorie 1&8)
 - [YAML] Opvragen HR-gegevens 
+- Best practices
 
 ##### Binnenkort op te leveren specificaties
 - [YAML] Opvragen BRP-gegevens (alle overige API's binnen deze EPS) 
