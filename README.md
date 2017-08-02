@@ -2,6 +2,7 @@
 De doelstelling van Gemeenschappelijk Regeling Drechtsteden (GRD) is om per 1 januari 2018 alle koppelvlakken gerealiseerd te hebben. Het realiseren van koppelvlakken betekent voor Drechtsteden dat alle applicaties gegevens uitwisselen met elkaar via de centrale servicebus van Vicrea (Neuron Integratie Platform). De centrale voorziening waar de servicebus onderdeel van uit maakt wordt binnen Drechtsteden aangeduid met determ "CDV". Met de snelheid waarmee gemiddeld genomen huidige StUF-koppelvlakken gerealiseerd worden binnen Drechtsteden wordt de datum 1 januari 2018 zeker niet gehaald. Dit vraagt om een andere aanpak.
 
 # Aanpak
+Drechtsteden kiest ervoor om voor Vraag/Antwoord-constructies de andere aanpak te gaan hanteren, en dan specifiek voor afnemende applicaties die de bevraging van Basis- en Kernregistraties en Zaken/Documenten momenteel met StUF niet (correct) ondersteunen. 
 De aanpak die Drechtsteden kiest is in lijn met het advies dat Solventa in opdracht van KING begin 2017 heeft uitgebracht over het opstellen van Eindproductstandaarden ter vervanging van StUF-BG en StUF-ZKN (zie http://www.gemmaonline.nl/images/gemmaonline/0/08/Eindproductstandaarden_-_vervanging_StUF-BG_en_StUF-ZKN.pdf). Hieronder een opsomming van de voordelen van Eindproductstandaarden die in dit advies benoemd worden:
 
 - Eindproductstandaarden kunnen in hoger tempo worden opgesteld door KING.
@@ -47,15 +48,17 @@ beschrijving op Github).
 ##### Opgeleverde specificaties
 - [Functionele specificatie] Opvragen BRP-gegevens
 - [Functionele specificatie] Opvragen HR-gegevens 
+- [Functionele specificatie] Opvragen MDW-gegevens 
 - [YAML] Opvragen BRP-gegevens (categorie 1&8)
 - [YAML] Opvragen HR-gegevens 
 
 ##### Binnenkort op te leveren specificaties
 - [YAML] Opvragen BRP-gegevens (alle overige API's binnen deze EPS) 
+- [YAML] Opvragen MDW-gegevens 
 
 ##### Backlog op te leveren specificaties
 - [Functionele specificatie/YAML] Opvragen BAG-gegevens
-- [Functionele specificatie/YAML] Zaak-Documentservices
+- [Functionele specificatie/YAML] Opvragen Zaak/Document
 
 ##### Documentatie die nog opgesteld moet worden
 - Foutafhandeling
