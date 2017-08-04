@@ -18,6 +18,10 @@ Met het omarmen van het advies gaat KING koersen richting een nieuwe StUF. Veel 
 
 Drechtsteden zelf is er daarnaast van overtuigd dat op deze wijze de koppelvlakken wel op 1 januari 2018 gerealiseerd kunnen zijn.
 
+##### Vraag/Antwoord mechanisme
+Met de vragende partij (de afnemer) is een Gegevensleveringsovereenkomst (GLO) overeengekomen. Dit betekent dat het vastligt welke gegevens (tot op attribuutniveau) maximaal afgenomen mogen. Het vraagbericht dat de afnemer stuurt naar de CDV specificeert deze maximale gegevensset niet. De vraag is standaard, gespecificeerd in de YAML-specificatie en voor iedere afnemer identiek. 
+Nadat de vraag binnen CDV beantwoord is door het gegevensmagazijn wordt het antwoordbericht gefilterd op basis van de geldende autorisaties voor die afnemer (conform GLO). Het gefilterde antwoordbericht wordt teruggestuurd naar de afnemer.
+
 # JSON/YAML
 Berichtenverkeer dat conform deze aanpak wordt opgezet is gebaseerd op JSON webservices. Om tussen software-leveranciers misinterpretatie te voorkomen wordt via YAML een specificatie opgesteld. Met een YAML specificatie is het mogelijk om JSON webservices te genereren.
 
