@@ -46,9 +46,9 @@ beschrijving op Github).
 
 # Documentatie
 ##### Opgeleverde specificaties
-- [Functionele specificatie] Opvragen BRP-gegevens
-- [Functionele specificatie] Opvragen HR-gegevens 
-- [Functionele specificatie] Opvragen MDW-gegevens 
+- [SPEC] Functionele specificatie Opvragen BRP-gegevens
+- [SPEC] Functionele specificatie Opvragen HR-gegevens 
+- [SPEC] Functionele specificatie Opvragen MDW-gegevens 
 - [YAML] Opvragen BRP-gegevens (categorie 1&8)
 - [YAML] Opvragen HR-gegevens 
 - Best practices
