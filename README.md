@@ -55,11 +55,11 @@ beschrijving op Github).
 - [SPEC] Functionele specificatie Opvragen MDW-gegevens 
 - [YAML] Opvragen BRP-gegevens (categorie 1&8)
 - [YAML] Opvragen HR-gegevens 
+- [YAML] Opvragen MDW-gegevens 
 - Best practices
 
 ##### Binnenkort op te leveren specificaties
 - [YAML] Opvragen BRP-gegevens (alle overige API's binnen deze EPS) 
-- [YAML] Opvragen MDW-gegevens 
 
 ##### Backlog op te leveren specificaties
 - [Functionele specificatie/YAML] Opvragen BAG-gegevens
