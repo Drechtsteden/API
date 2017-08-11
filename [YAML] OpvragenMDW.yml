@@ -41,8 +41,8 @@ paths:
         type: string 
         required: false
         enum: 
-            - True
-            - false
+            - J
+            - N
   /RaadpleegMedewerkerOpGRID_ID:
     get:
       summary: opvragen van medewerkergegevens op basis van GRID_ID
