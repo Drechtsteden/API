@@ -77,9 +77,9 @@ nieuwe StUF te concretiseren.
 Drechtsteden zelf is er daarnaast van overtuigd dat op deze
 wijze de koppelvlakken wel op 1 januari 2018 gerealiseerd kunnen zijn.
 
-
-
-
+ 
+ 
+ 
 # Oplossingsrichting
 
 Drechtsteden kiest ervoor om voor Vraag/Antwoord-constructies
