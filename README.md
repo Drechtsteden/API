@@ -101,6 +101,11 @@ gegevensmagazijn wordt het antwoordbericht gefilterd op basis van de geldende au
 voor die afnemer (conform GLO). Het gefilterde antwoordbericht wordt
 teruggestuurd naar de afnemer.
 
+*Visualisatie*
+
+![alt text](https://github.com/Drechtsteden/API/blob/master/vraag-antwoord.png
+"Vraag/Antwoord")
+
 ### Technologie
 
 Berichtenverkeer dat conform deze aanpak wordt opgezet is
