@@ -77,6 +77,9 @@ nieuwe StUF te concretiseren.
 Drechtsteden zelf is er daarnaast van overtuigd dat op deze
 wijze de koppelvlakken wel op 1 januari 2018 gerealiseerd kunnen zijn.
 
+
+
+
 # Oplossingsrichting
 
 Drechtsteden kiest ervoor om voor Vraag/Antwoord-constructies
@@ -98,16 +101,12 @@ gegevensmagazijn wordt het antwoordbericht gefilterd op basis van de geldende au
 voor die afnemer (conform GLO). Het gefilterde antwoordbericht wordt
 teruggestuurd naar de afnemer.
 
- 
-
 ### Technologie
 
 Berichtenverkeer dat conform deze aanpak wordt opgezet is
 gebaseerd op JSON webservices. Om tussen softwareleveranciers misinterpretatie
 te voorkomen wordt via YAML een specificatie opgesteld. Met een YAML
 specificatie is het mogelijk om JSON webservices te genereren.
-
- 
 
 ##### JSON
 
@@ -118,8 +117,6 @@ hoofdzakelijk gebruikt voor uitwisseling van data tussen server en
 webapplicatie, als een alternatief voor xml. Daarmee is een JSON API uitermate
 geschikt voor de communicatie met mobiele devices en IoT toepassingen van
 afnemers.  
-
- 
 
 ##### YAML
 
@@ -137,8 +134,6 @@ software. Precies op dit punt kan de inzet van YAML dus meerwaarde opleveren.
 Het is dus niet het idee dat JSON services dan alsnog handmatig worden
 gerealiseerd.
 
- 
-
 ##### Creëren YAML specificaties
 
 YAML-specificatie kunnen gemaakt worden op basis van Open API
@@ -151,8 +146,6 @@ Als je de specificatie bijvoorbeeld in
 http://editor.swagger.io/#/  kopieert,
 dan zie je direct een JSON-response voorbeeld. Er kan ook direct code worden
 gegenereerd voor allerlei talen voor zowel de client als de server kant.
-
- 
 
 ##### Code generatie vanuit YAML
 
@@ -173,7 +166,6 @@ https://github.com/swagger-api/swagger-codegen/wiki/Server-stub-generator-HOWTO
 Via de volgende website kun je JSON eenvoudig tegen YAML-specificaties
 laten valideren: http://www.jsonschemavalidator.net/ 
 
- 
 
 ### Werkwijze
 
@@ -192,8 +184,6 @@ beschrijving op Github).
 
 - Voorbeeldberichten worden op Github geplaatst.
 
- 
-
 ### Documentatie
 
 Opgeleverde specificaties
@@ -211,7 +201,6 @@ Opgeleverde specificaties
 - [YAML] Opvragen MDW-gegevens 
 
 - Best practices
-
  
 
 Binnenkort op te leveren specificaties
