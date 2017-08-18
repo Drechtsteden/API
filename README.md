@@ -199,6 +199,8 @@ Opgeleverde specificaties
 
 - [SPEC] Functionele specificatie Opvragen MDW-gegevens 
 
+- [SPEC] Functionele specificatie Opvragen BAG-gegevens 
+
 - [YAML] Opvragen BRP-gegevens (categorie 1&8)
 
 - [YAML] Opvragen HR-gegevens 
