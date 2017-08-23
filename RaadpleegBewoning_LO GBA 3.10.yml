@@ -1,0 +1,222 @@
+swagger: '2.0'
+info:
+  description: Specificatie StUF Json opvragen NPS
+  version: LO GBA 3.10
+  title: NPS op RaadpleegBewoning
+  contact: {}
+host: zaaksysteem.greenvalley.nl
+basePath: /bg
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /RaadpleegBewoning:
+    get:
+      summary:  IngeschrevenPersoon op RaadpleegBewoning
+      description: 'Zoek IngeschrevenPersoon op RaadpleegBewoning'
+      produces:
+        - application/json
+      parameters:
+        - name: zenderOrganisatie
+          in: header
+          description: 'Organisatiecode van de opvragende organisatie (kan zijn een gemeentecode, RSIN, OIN)'
+          required: false
+          type: string
+        - name: zenderApplicatie
+          in: header
+          description: 'Applicatiecode van de opvragende organisatie'
+          required: false
+          type: string
+        - name: zenderGebruiker
+          in: header
+          description: 'Organisatiebrede unieke gebruikerIdentificatie'
+          required: false
+          type: string
+        - name: zenderAdministratie
+          in: header
+          description: 'Administratie of organisatieonderdeel die gegevens opvraagt'
+          required: false
+          type: string          
+        - name: ontvangerOrganisatie
+          in: header
+          description: 'Organisatiecode van de leverende organisatie (kan zijn een gemeentecode, RSIN, OIN)'
+          required: false
+          type: string
+        - name: ontvangerApplicatie
+          in: header
+          description: 'Applicatiecode van de leverende organisatie'
+          required: false
+          type: string
+        - name: ontvangerGebruiker
+          in: header
+          description: 'Organisatiebrede unieke gebruikerIdentificatie'
+          required: false
+          type: string
+        - name: ontvangerAdministratie
+          in: header
+          description: 'Administratie of organisatieonderdeel die gegevens levert'
+          required: false
+          type: string        
+        - name: referentienummer
+          in: header
+          required: false
+          type: string
+        - name: tijdstipbericht
+          in: header
+          required: false
+          type: string
+        - name: entiteittype
+          in: header
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/NatuurlijkPersoon'
+    parameters:
+        - name: aoa.identificatie
+          in: query
+          description: ''
+          required: true
+          type: string
+        - name: van
+          in: query
+          description: 'Het unieke identifiecatienummer van de Adresseerbaar Object Aanduiding'
+          required: false
+          type: string
+        - name: totEnMet
+          in: query
+          description: 'totEnMet'
+          required: false
+          type: string
+        - name: inclusiefOverledenPersonen
+          in: query
+          description: 'inclusiefOverledenPersonen'
+          required: false
+          type: boolean
+definitions:
+  NatuurlijkPersoon:
+    type: object
+    properties:
+      inp.bsn:
+        type: string
+        description: 'Het burgerservicenummer, bedoeld in artikel 1.1 van de Wet algemene bepalingen burgerservicenummer'
+        minLength: 8
+        maxLength: 9
+      authentiek:
+        type: boolean
+        description: 'Aanduiding of het een authentiek gegeven betreft'
+      a-nummer:
+        type: string
+        description: 'Het administratienummer, bedoeld in artikel 50 van de Wet GBA'
+      geslachtsnaam:
+        type: string
+        description: 'Geslachtsnaam'
+        maxLength: 200
+      voorvoegselGeslachtsnaam:
+        type: string
+        description: 'Voorvoegsel geslachtsnaam'
+        maxLength: 10
+      voorletters:
+        type: string
+        description: 'Voorletters'
+        maxLength: 20
+      voornamen:
+        type: string
+        description: 'Voornamen'
+        maxLength: 200
+      aanduidingNaamgebruik:
+        type: string
+        description: 'aanduiding Naamgebruik'
+        enum:
+              - E
+              - V
+              - P
+              - N
+      geslachtsaanduiding:
+        type: string
+        description: 'Geslachtsaanduiding'
+        enum:
+            - V
+            - M
+            - O
+      geboortedatum:
+        type: integer
+        maxLength: 8
+        description: 'Datum kan onvolledig zijn, daarom integer'
+      overlijdensdatum:
+        type: integer
+        maxLength: 8
+        description: 'De datum van overlijden'
+      inp.gemeenteVanInschrijving:
+        type: integer
+        description: 'Gemeente Inschrijving'
+      aanduidingnaamgebruik:
+        type: string
+        description: 'Aanduiding naamgebruik'
+      Naamaanschrijving:
+        type: string
+      verblijfsAdres:
+        type: object
+        description: 'Adres waar een NatuurlijkPersoon verblijft'
+        properties:
+          aoaAdres:
+            $ref: '#/definitions/AOAobject'
+          buitenlandsAdres:
+            $ref: '#/definitions/BuitenlandsAdres'
+  BuitenlandsAdres:
+    type: object
+    properties:
+      lnd.landnaam:
+        type: string
+        description: 'De naam van het land, zoals opgenomen in de Landentabel van de GBA'
+      lnd.landcode:
+        type: integer 
+        description: 'De code, behorende bij de landnaam, opgenomen in de Landentabel van de GBA'
+      sub.adresBuitenland1:
+        type: string
+        description: 'Het eerste deel van het adres in het buitenland dat het SUBJECT opgeeft bij vertrek naar het buitenland dan wel waar het SUBJECT in het buitenland verblijft'
+      sub.adresBuitenland2:
+        type: string
+        description: 'Het tweede deel van het adres in het buitenland dat het SUBJECT opgeeft bij vertrek naar het buitenland dan wel waar het SUBJECT in het buitenland verblijft'
+      sub.adresBuitenland3:
+        type: string
+        description: 'Het derde deel van het adres in het buitenland dat het SUBJECT opgeeft bij vertrek naar het buitenland dan wel waar het SUBJECT in het buitenland verblijft'
+  AOAobject:
+    type: object
+    description: 'AOAobject'
+    properties:
+      wpl.woonplaatsNaam:
+        type: string
+        description: 'Woonplaatsnaam'
+      gor.openbareRuimteNaam:
+        type: string
+        description: 'Een naam die aan een openbare ruimte is toegekend in een daartoe strekkend formeel gemeentelijk besluit. Een openbare ruimte is een door een bevoegde gemeentelijk orgaan als zodanig aangewezen. Voor Naam openbareruimte mag officiële straatnaam gelezen worden'
+      gor.straatnaam:
+        type: string
+        description: 'De officiële straatnaam zoals in het gemeente bestuur is vastgesteld. De naam wordt zo nodig ingekort conform de specificaties van de BOCO-norm'
+      aoa.postcode:
+        type: string
+        description: 'Postcode'
+        minLength: 6
+        maxLength: 6
+        pattern: 9999NN
+      aoa.huisnummer:
+        type: integer
+        description: 'Huisnummer'
+        minimum: 1
+      aoa.huisletter:
+        type: string
+        description: 'Huisletter'
+      aoa.huisnummertoevoeging:
+        type: string
+        description: 'Huisnummertoevoeging'
+      aoa.identificatie:
+        type: number
+        description: 'Het unieke identifiecatienummer van de Adresseerbaar Object Aanduiding'
