@@ -13,7 +13,7 @@ consumes:
 produces:
   - application/json
 paths:
-  /IngeschrevenNietNatuurlijkPersoon/o  RaadpleegIngeschrevenNietNatuurlijkPersoonOpKvknummer:
+  /RaadpleegIngeschrevenNietNatuurlijkPersoonOpKvknummer:
     get:
       summary: 'Raadpleeg ingeschreven NietNatuurlijkPersoon op Kvk nummer.'
       description: 'Raadpleeg ingeschreven NietNatuurlijkPersoon op Kvk nummer.'
