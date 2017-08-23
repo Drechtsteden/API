@@ -13,7 +13,7 @@ consumes:
 produces:
   - application/json
 paths:
-  /Vestiging/ZoekVestigingOpBinnenlandsVestigingsadres:
+  /ZoekVestigingOpBinnenlandsVestigingsadres:
     get:
       summary: Opvragen NietNatuurlijkPersoon op BinnenlandsVestigingsadres
       description: 'Vraagt ingeschreven NietNatuurlijkPersoon op BinnenlandsVestigingsadres.'
