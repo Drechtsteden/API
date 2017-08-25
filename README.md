@@ -25,7 +25,8 @@ en Centric wordt de oplossing gerealiseerd binnen Gemeenschappelijke Regeling
 Drechtsteden. Waarbij Solventa een belangrijke rol speelt in het inhoudelijk
 aansturen van het traject, conform door Solventa begin 2017 opgestelde principes
 voor het opzetten van Eindproductstandaarden (zie 
-[Gemmaonline.nl](http://www.gemmaonline.nl/images/gemmaonline/0/08/Eindproductstandaarden_-_vervanging_StUF-BG_en_StUF-ZKN.pdf))
+[Gemmaonline.nl](http://www.gemmaonline.nl/images/gemmaonline/0/08/Eindproductstandaarden_-_vervanging_StUF-BG_en_StUF-ZKN.pdf
+"Advies Eindproductstandaarden Solventa"))
 
 
 # Context
@@ -77,10 +78,10 @@ wijze de koppelvlakken wel op 1 januari 2018 gerealiseerd kunnen zijn.
 
 ### Aansluitkeuze 
 
-*Visualisatie*
+Drechtsteden hanteert een afwegingskader om een keuze te maken in de manier van aansluiten. Dit kader is in de volgende plaat gevisualiseerd. 
 
 ![alt text](https://github.com/Drechtsteden/API/blob/master/aansluitkeuze.png
-"Vraag/Antwoord")
+"Aansluitkeuze")
  
 # Oplossingsrichting
 
