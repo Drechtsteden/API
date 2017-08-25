@@ -24,8 +24,7 @@ In samenwerking met softwareleveranciers Vicrea, Green Valley
 en Centric wordt de oplossing gerealiseerd binnen Gemeenschappelijke Regeling
 Drechtsteden. Waarbij Solventa een belangrijke rol speelt in het inhoudelijk
 aansturen van het traject, conform door Solventa begin 2017 opgestelde principes
-voor het opzetten van Eindproductstandaarden (zie
-[Gemmaonline.nl](http://www.gemmaonline.nl/images/gemmaonline/0/08/Eindproductstandaarden_-_vervanging_StUF-BG_en_StUF-ZKN.pdf/"Solventa Advies Eindproductstandaarden"))
+voor het opzetten van Eindproductstandaarden (zie http://www.gemmaonline.nl/images/gemmaonline/0/08/Eindproductstandaarden_-_vervanging_StUF-BG_en_StUF-ZKN.pdf)
 
 
 # Context
@@ -106,7 +105,8 @@ teruggestuurd naar de afnemer.
 ### Technologie
 
 Berichtenverkeer dat conform deze aanpak wordt opgezet is
-gebaseerd op JSON webservices. Om tussen softwareleveranciers misinterpretatie
+gebaseerd op JSON webservices. Hiermee wordt aangesloten op de API/URI strategie die is opgesteld door het deelprogramma Digitaal Stelsel Omgevingswet (DsO), zie https://aandeslagmetdeomgevingswet.nl/digitaal-stelsel/documenten/documenten/api-uri-strategie/. 
+Om tussen softwareleveranciers misinterpretatie
 te voorkomen wordt via YAML een specificatie opgesteld. Met een YAML
 specificatie is het mogelijk om JSON webservices te genereren.
 
