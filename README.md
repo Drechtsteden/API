@@ -24,7 +24,8 @@ In samenwerking met softwareleveranciers Vicrea, Green Valley
 en Centric wordt de oplossing gerealiseerd binnen Gemeenschappelijke Regeling
 Drechtsteden. Waarbij Solventa een belangrijke rol speelt in het inhoudelijk
 aansturen van het traject, conform door Solventa begin 2017 opgestelde principes
-voor het opzetten van Eindproductstandaarden (zie http://www.gemmaonline.nl/images/gemmaonline/0/08/Eindproductstandaarden_-_vervanging_StUF-BG_en_StUF-ZKN.pdf)
+voor het opzetten van Eindproductstandaarden (zie 
+[Gemmaonline.nl](http://www.gemmaonline.nl/images/gemmaonline/0/08/Eindproductstandaarden_-_vervanging_StUF-BG_en_StUF-ZKN.pdf)
 
 
 # Context
@@ -79,7 +80,7 @@ wijze de koppelvlakken wel op 1 januari 2018 gerealiseerd kunnen zijn.
  
 # Oplossingsrichting
 
-De oplossing voor Drechtsteden is geent op principes die zijn afgeleid uit het advies Eindproductstandaarden van Solenvta. Specifiek voor Drechtsteden zijn de principes uit dit advies aangescherpt en gelden als leidraad voor het tot stand komen van de oplossing (zie Principes API: https://github.com/Drechtsteden/API/blob/master/Principes%20API's.docx).  
+De oplossing voor Drechtsteden is geent op principes die zijn afgeleid uit het advies Eindproductstandaarden van Solenvta. Specifiek voor Drechtsteden zijn de principes uit dit advies aangescherpt en gelden als leidraad voor het tot stand komen van de oplossing (zie [Principes API's](https://github.com/Drechtsteden/API/blob/master/Principes%20API's.docx).  
 Drechtsteden kiest ervoor om voor Vraag/Antwoord-constructies
 de andere aanpak te gaan hanteren, en dan specifiek voor afnemende applicaties
 die de bevraging van Basis- en Kernregistraties en Zaken/Documenten momenteel
@@ -106,7 +107,8 @@ teruggestuurd naar de afnemer.
 ### Technologie
 
 Berichtenverkeer dat conform deze aanpak wordt opgezet is
-gebaseerd op JSON webservices. Hiermee wordt aangesloten op de API/URI strategie die is opgesteld door het deelprogramma Digitaal Stelsel Omgevingswet (DsO), zie https://aandeslagmetdeomgevingswet.nl/digitaal-stelsel/documenten/documenten/api-uri-strategie/. 
+gebaseerd op JSON webservices. Hiermee wordt aangesloten op de API/URI strategie die is opgesteld door het deelprogramma Digitaal Stelsel Omgevingswet (DsO), zie [DsO](https://aandeslagmetdeomgevingswet.nl/digitaal-stelsel/documenten/documenten/api-uri-strategie/).
+
 Om tussen softwareleveranciers misinterpretatie
 te voorkomen wordt via YAML een specificatie opgesteld. Met een YAML
 specificatie is het mogelijk om JSON webservices te genereren.
