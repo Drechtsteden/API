@@ -75,8 +75,10 @@ nieuwe StUF te concretiseren.
 Drechtsteden zelf is er daarnaast van overtuigd dat op deze
 wijze de koppelvlakken wel op 1 januari 2018 gerealiseerd kunnen zijn.
 
- 
- 
+### Aansluitkeuze 
+
+![alt text](https://github.com/Drechtsteden/API/blob/master/aansluitkeuze.png"Aansluitkeuze") 
+
  
 # Oplossingsrichting
 
