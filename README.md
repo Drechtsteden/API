@@ -25,7 +25,7 @@ en Centric wordt de oplossing gerealiseerd binnen Gemeenschappelijke Regeling
 Drechtsteden. Waarbij Solventa een belangrijke rol speelt in het inhoudelijk
 aansturen van het traject, conform door Solventa begin 2017 opgestelde principes
 voor het opzetten van Eindproductstandaarden (zie
-[Gemmaonline.nl](http://www.gemmaonline.nl/images/gemmaonline/0/08/Eindproductstandaarden_-_vervanging_StUF-BG_en_StUF-ZKN.pdf"Solventa Advies Eindproductstandaarden"))
+[Gemmaonline.nl](http://www.gemmaonline.nl/images/gemmaonline/0/08/Eindproductstandaarden_-_vervanging_StUF-BG_en_StUF-ZKN.pdf/"Solventa Advies Eindproductstandaarden"))
 
 
 # Context
