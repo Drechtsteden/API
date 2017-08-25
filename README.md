@@ -77,8 +77,10 @@ wijze de koppelvlakken wel op 1 januari 2018 gerealiseerd kunnen zijn.
 
 ### Aansluitkeuze 
 
-[Aansluitkeuze](https://github.com/Drechtsteden/API/blob/master/aansluitkeuze.png) 
+*Visualisatie*
 
+![alt text](https://github.com/Drechtsteden/API/blob/master/aansluitkeuze.png
+"Vraag/Antwoord")
  
 # Oplossingsrichting
 
