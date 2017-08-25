@@ -96,7 +96,7 @@ vraagbericht dat de afnemer stuurt naar de CDV specificeert deze maximale
 gegevensset niet. De vraag is standaard, gespecificeerd in de YAML-specificatie
 en voor iedere afnemer identiek. 
 
-Nadat de vraag m.b.v. CDV beantwoord is (CDV moet hiervoor bronnen aanwenden) wordt het antwoordbericht gefilterd op basis van de geldende autorisaties
+Nadat de vraag m.b.v. CDV beantwoord is (CDV moet hiervoor een of meerdere bronnen aanwenden) wordt het antwoordbericht gefilterd op basis van de geldende autorisaties
 voor die afnemer (conform GLO). Het gefilterde antwoordbericht wordt
 teruggestuurd naar de afnemer.
 
