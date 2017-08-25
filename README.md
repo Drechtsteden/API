@@ -79,7 +79,7 @@ wijze de koppelvlakken wel op 1 januari 2018 gerealiseerd kunnen zijn.
  
 # Oplossingsrichting
 
-Drechtsteden kiest ervoor om voor Vraag/Antwoord-constructies
+De oplossing voor Drechtsteden is geent op principes die zijn afgeleid uit het advies Eindproductstandaarden van Solenvta. Specifiek voor Drechtsteden zijn de principes uit dit advies aangescherpt en gelden als leidraad voor het tot stand komen van de oplossing (zie Principes API).  Drechtsteden kiest ervoor om voor Vraag/Antwoord-constructies
 de andere aanpak te gaan hanteren, en dan specifiek voor afnemende applicaties
 die de bevraging van Basis- en Kernregistraties en Zaken/Documenten momenteel
 met StUF niet (correct) ondersteunen. 
