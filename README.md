@@ -146,7 +146,8 @@ software. Precies op dit punt kan de inzet van YAML dus meerwaarde opleveren.
 Het is dus niet het idee dat JSON services dan alsnog handmatig worden
 gerealiseerd.
 
-Zie document 'YAML-specificatie' voor verdere uitleg over het creeren van YAML-specificaties en het genereren van code vanuit YAML.
+Zie document [YAML specificatie](https://github.com/Drechtsteden/API/blob/master/YAML%20specificatie.docx)
+voor verdere uitleg over het creeren van YAML-specificaties en het genereren van code vanuit YAML.
 
 ### Werkwijze
 
