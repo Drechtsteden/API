@@ -13,9 +13,9 @@ consumes:
 produces:
   - application/json
 paths:
-  /RaadpleegMedewerkerOpPersoneelsnummerEnContractnummer:
+  /RaadpleegMedewerkerOpWerknemernummerEnContractnummer:
     get:
-      summary: opvragen van medewerkergegevens op basis van personeels- en/of contractnummer, indien geen zoekcriterium wordt opgegeven worden alle medewerkers opgevraagd.
+      summary: opvragen van medewerkergegevens op basis van werknemer- en/of contractnummer
       description: 'Vraagt de gegevens van een medewerker op.'
       produces:
         - application/json
@@ -28,7 +28,7 @@ paths:
               medewerker:
                 $ref: '#/definitions/kernregistratie_medewerker'
     parameters:
-      - name: personeelsnummer
+      - name: werknemernummer
         in: query
         required: false
         type: number
@@ -36,7 +36,7 @@ paths:
         in: query
         required: false
         type: number
-      - name: historie
+      - name: Historie
         in: query
         type: string 
         required: false
@@ -127,7 +127,7 @@ definitions:
       GRID_ID:
        description: Het gebruikersaccount van de medewerker voor dit specifieke dienstverband.
        type: string
-      PERSONEELSNUMMER:
+      WERKNEMERNUMMER:
         type: number
         description: Het unieke nummer waaronder een medewerker is geregistreerd binnen applicatie ADP van afdeling P&O.
         minLength: 1
