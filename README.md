@@ -7,7 +7,7 @@ De doelstelling van Gemeenschappelijk Regeling Drechtsteden
 realiseren van koppelvlakken betekent voor Drechtsteden dat alle applicaties
 gegevens uitwisselen met elkaar via de centrale servicebus van Vicrea (Neuron
 Integratie Platform). De centrale voorziening waar de servicebus onderdeel van
-uit maakt wordt binnen Drechtsteden aangeduid met de term "CDV". Met
+uitmaakt wordt binnen Drechtsteden aangeduid met de afkorting "CDV". Met
 de snelheid waarmee gemiddeld genomen huidige StUF-koppelvlakken gerealiseerd
 worden binnen Drechtsteden wordt de datum 1 januari 2018 zeker niet gehaald.
 Dit vraagt om een andere aanpak.
@@ -67,10 +67,10 @@ nieuwe StUF. Veel is er onduidelijk over hoe dit traject er uit gaat zien. Een
 feit is dat Drechtsteden graag de nek uitsteekt en leveranciers bij elkaar
 brengt om conform eerder genoemd advies koppelvlakken te realiseren.
 Leveranciers Vicrea en Green Valley zijn inmiddels druk bezig de eerste
-koppelvlakken te realiseren op basis van YAML/JSON. Met deze resultaten gaat
+koppelvlakken te realiseren op basis van JSON. Met deze resultaten gaat
 Drechtsteden bij KING aantonen dat er inderdaad vele voordelen te behalen zijn
 met de inzet van Eindproductstandaarden en de technische mogelijkheden van
-YAML/JSON. Dit soort praktijkvoorbeelden heeft KING nodig om de route naar een
+JSON. Dit soort praktijkvoorbeelden heeft KING nodig om de route naar een
 nieuwe StUF te concretiseren.
 
 Drechtsteden zelf is er daarnaast van overtuigd dat op deze
@@ -85,7 +85,7 @@ Drechtsteden hanteert een afwegingskader om een keuze te maken in de manier van 
  
 # Oplossingsrichting
 
-De oplossing voor Drechtsteden is geent op principes die zijn afgeleid uit het advies Eindproductstandaarden van Solenvta. Specifiek voor Drechtsteden zijn de principes uit dit advies aangescherpt en gelden als leidraad voor het tot stand komen van de oplossing (zie [Principes API's](https://github.com/Drechtsteden/API/blob/master/Principes%20API's.docx)).  
+De oplossing voor Drechtsteden is geënt op principes die zijn afgeleid uit het advies Eindproductstandaarden van Solenvta. Specifiek voor Drechtsteden zijn de principes uit dit advies aangescherpt en gelden als leidraad voor het tot stand komen van de oplossing (zie [Principes API's](https://github.com/Drechtsteden/API/blob/master/Principes%20API's.docx)).  
 Drechtsteden kiest ervoor om voor Vraag/Antwoord-constructies
 de andere aanpak te gaan hanteren, en dan specifiek voor afnemende applicaties
 die de bevraging van Basis- en Kernregistraties en Zaken/Documenten momenteel
@@ -178,7 +178,7 @@ Opgeleverde specificaties
 
 - [SPEC] Functionele specificatie Opvragen BAG-gegevens 
 
-- [YAML] Opvragen BRP-gegevens (categorie 1&8)
+- [YAML] Opvragen BRP-gegevens
 
 - [YAML] Opvragen HR-gegevens 
 
@@ -186,12 +186,6 @@ Opgeleverde specificaties
 
 - Best practices
  
-
-Binnenkort op te leveren specificaties
-
-- [YAML] Opvragen BRP-gegevens (alle overige API's binnen
-deze EPS) 
-
 ---
 
 Heb je vragen of opmerkingen over dit traject: neem contact op met
