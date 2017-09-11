@@ -106,14 +106,13 @@ Nadat de vraag m.b.v. CDV beantwoord is (CDV moet hiervoor een of meerdere bronn
 
 ### Technologie
 
+In maart 2016 heeft het Forum Standaardisatie een discussiedocument opgesteld waarin wordt uitgelegd wat API's zijn, hoe ze werken en wat de betekenis is voor standaarden. In deze discussie worden ook achtergronden en trends besproken die de gekozen richting in dit document ondersteunen. Zie voor meer achtergrond informatie: https://www.forumstandaardisatie.nl/thema/application-programming-interfaces-api 
+
 Voor het opstellen van de API's voor Drechtsteden wordt aangesloten op de API- en URI-strategie die is opgesteld door het deelprogramma Digitaal Stelsel Omgevingswet (DsO), zie [DsO](https://aandeslagmetdeomgevingswet.nl/digitaal-stelsel/documenten/documenten/api-uri-strategie/).
 
+API's worden op basis van JSON webservices aangeboden. 
 
-Berichtenverkeer dat conform deze aanpak wordt opgezet is gebaseerd op JSON webservices. 
-
-Om tussen softwareleveranciers misinterpretatie
-te voorkomen wordt via YAML een specificatie opgesteld. Met een YAML
-specificatie is het mogelijk om JSON webservices te genereren.
+Om tussen softwareleveranciers misinterpretatie te voorkomen wordt via YAML een specificatie opgesteld. Met een YAML specificatie is het mogelijk om JSON webservices te genereren.
 
 ##### JSON
 
