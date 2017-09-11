@@ -93,15 +93,11 @@ met StUF niet (correct) ondersteunen.
 
 ### Vraag/Antwoord mechanisme
 
-Met de vragende partij (de afnemer) is een
-Gegevensleveringsovereenkomst (GLO) overeengekomen. Dit betekent dat het
-vastligt welke gegevens (tot op attribuutniveau) maximaal afgenomen mogen. Het
-vraagbericht dat de afnemer stuurt naar de CDV specificeert deze maximale
-gegevensset niet. De vraag is standaard en simpel, bevat enkel de aanduiding van de vraag en de zoekcriteria. Door de opzet van vraag/antwoord in elementaire bevragingen bevatten antwoorden geen overbodige gegevens. De vraag is gespecificeerd in de YAML-specificatie en is voor iedere afnemer identiek. Door de opzet van elementaire bevragingen. 
+De vraag is standaard en simpel, bevat enkel de aanduiding van de vraag en de zoekcriteria. Door de opzet van vraag/antwoord in elementaire bevragingen bevatten antwoorden geen overbodige gegevens. Is er op basis van een antwoord nog behoefte om verder te vragen, bijvoorbeeld om de gegevens van een gerelateerde persoon, dan dient een nieuwe vraag te worden gesteld. 
 
-Nadat de vraag m.b.v. CDV beantwoord is (CDV moet hiervoor een of meerdere bronnen aanwenden) wordt het antwoordbericht gefilterd op basis van de geldende autorisaties
-voor die afnemer (conform GLO). Het gefilterde antwoordbericht wordt
-teruggestuurd naar de afnemer.
+Met de vragende partij (de afnemer) is een Gegevensleveringsovereenkomst (GLO) overeengekomen. Dit betekent dat het vastligt welke gegevens (tot op attribuutniveau) maximaal afgenomen mogen worden. Het vraagbericht dat de afnemer stuurt naar de CDV specificeert deze maximale gegevensset niet. De vragen zijn gespecificeerd in de YAML-specificatie, de vragen zijn voor iedere afnemer identiek.  
+
+Nadat de vraag m.b.v. CDV beantwoord is (CDV moet hiervoor een of meerdere bronnen aanwenden) wordt het antwoordbericht gefilterd op basis van de geldende autorisaties voor die afnemer (conform GLO). Het gefilterde antwoordbericht wordt teruggestuurd naar de afnemer.
 
 *Visualisatie*
 
