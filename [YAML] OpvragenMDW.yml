@@ -1,4 +1,4 @@
-﻿swagger: '2.0'
+swagger: '2.0'
 info:
   description: Specificatie StUF Json opvragen medewerker gegevens
   version: 1.0.0
@@ -82,9 +82,9 @@ paths:
         required: true
         type: string
 definitions:
-  kernregistratie_medewerker:
-    type: object
-    properties:
+ kernregistratie_medewerker:
+   type: object
+   properties:
       AANSCHRIJFNAAM:
        description: De aanschrijfnaam van de medewerker. De achternaam zoals de medewerker die binnen de organisatie wil hanteren.
        type: string
@@ -107,6 +107,8 @@ definitions:
       VOORVOEGSEL:
        description: De voorvoegsels van de geslachtsnaam van de medewerker.
        type: string
+      GESLACHTSNAAM:
+       description: de geslachtsnaam van de medewerker
       GESLACHTSAANDUIDING:
        description: De aanduiding van het geslacht van de medewerker. 
        type: string 
@@ -162,6 +164,9 @@ definitions:
       MOEDER_AFKORTING:
        description: De afkorting van niveau 1 in de te onderscheiden hiërarchie binnen de organisatiestructuur.
        type: string
+      MOEDERAFDELING_OMSCHRIJVING:
+       description: De omschrijving van de moederafdeling
+       type: string
       DIENSTUMMER:
        description: De codering van niveau 2 in de te onderscheiden hiërarchie binnen de organisatiestructuur.
        type: string
@@ -192,7 +197,7 @@ definitions:
       BUREAUOMSCHRIJVING:
        description: De omschrijving van niveau 5 in de te onderscheiden hiërarchie binnen de organisatiestructuur.
        type: string
-      BUREAU AFKORTING:
+      BUREAU_AFKORTING:
        description: De afkorting van niveau 5 in de te onderscheiden hiërarchie binnen de organisatiestructuur.
        type: string
       UNITNUMMER:
@@ -210,3 +215,9 @@ definitions:
       FUNCTIEOMSCHRIJVING: 
        description: De omschrijving van de functie zoals vastgelegd binnen P&O (globale functieomschrijving)
        type: string
+      HISTORIE:
+       description: Is de opgevraagde persoon in dienst of is deze uitdienst
+       type: string
+       enum:
+          - J
+          - N
