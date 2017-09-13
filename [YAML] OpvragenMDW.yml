@@ -61,7 +61,7 @@ paths:
       - name: GRID_ID
         in: query
         required: true
-        type: number
+        type: string
   /ZoekMedewerkersOpAchternaam:
     get:
       summary: opvragen van medewerkergegevens op basis van Aanschrijfnaam
