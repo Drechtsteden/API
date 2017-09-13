@@ -1,4 +1,4 @@
-swagger: '2.0'
+﻿swagger: '2.0'
 info:
   description: Specificatie StUF Json opvragen medewerker gegevens
   version: 1.0.0
@@ -167,7 +167,7 @@ definitions:
       MOEDERAFDELING_OMSCHRIJVING:
        description: De omschrijving van de moederafdeling
        type: string
-      DIENSTUMMER:
+      DIENSTNUMMER:
        description: De codering van niveau 2 in de te onderscheiden hiërarchie binnen de organisatiestructuur.
        type: string
       DIENSTOMSCHRIJVING:
