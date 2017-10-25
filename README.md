@@ -172,6 +172,8 @@ Opgeleverde specificaties
 
 - [SPEC] Functionele specificatie Opvragen BAG-gegevens 
 
+- [SPEC] Functionele specificatie Opvragen BRK-gegevens 
+
 - [YAML] Opvragen BRP-gegevens
 
 - [YAML] Opvragen HR-gegevens 
