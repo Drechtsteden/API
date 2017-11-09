@@ -176,6 +176,8 @@ Opgeleverde specificaties
 
 - [SPEC] Functionele specificatie Opvragen WIJK/BRT-gegevens 
 
+- [SPEC] Functionele specificatie Zaak-Documentservices 
+
 - [YAML] Opvragen BRP-gegevens
 
 - [YAML] Opvragen HR-gegevens 
