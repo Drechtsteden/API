@@ -174,6 +174,8 @@ Opgeleverde specificaties
 
 - [SPEC] Functionele specificatie Opvragen BRK-gegevens 
 
+- [SPEC] Functionele specificatie Opvragen WIJK/BRT-gegevens 
+
 - [YAML] Opvragen BRP-gegevens
 
 - [YAML] Opvragen HR-gegevens 
