@@ -1,0 +1,235 @@
+swagger: '2.0'
+info:
+  description: Specificatie RSGB 3.0 Json opvragen NPS
+  version: 1.0.0
+  title: NPS op RaadpleegIngeschrevenPersoonNationaliteit
+  contact: {}
+host: zaaksysteem.greenvalley.nl
+basePath: /bg
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+ /RaadpleegIngeschrevenPersoonNationaliteit:
+    get:
+      summary:  Raadpleeg ingeschreven persoon nationaliteit
+      description: 'Raadpleeg ingeschreven persoon nationaliteit'
+      produces:
+        - application/json
+      parameters:
+        - name: zenderOrganisatie
+          in: header
+          description: 'Organisatiecode van de opvragende organisatie (kan zijn een gemeentecode, RSIN, OIN)'
+          required: false
+          type: string
+        - name: zenderApplicatie
+          in: header
+          description: 'Applicatiecode van de opvragende organisatie'
+          required: false
+          type: string
+        - name: zenderGebruiker
+          in: header
+          description: 'Organisatiebrede unieke gebruikerIdentificatie'
+          required: false
+          type: string
+        - name: zenderAdministratie
+          in: header
+          description: 'Administratie of organisatieonderdeel die gegevens opvraagt'
+          required: false
+          type: string          
+        - name: ontvangerOrganisatie
+          in: header
+          description: 'Organisatiecode van de leverende organisatie (kan zijn een gemeentecode, RSIN, OIN)'
+          required: false
+          type: string
+        - name: ontvangerApplicatie
+          in: header
+          description: 'Applicatiecode van de leverende organisatie'
+          required: false
+          type: string
+        - name: ontvangerGebruiker
+          in: header
+          description: 'Organisatiebrede unieke gebruikerIdentificatie'
+          required: false
+          type: string
+        - name: ontvangerAdministratie
+          in: header
+          description: 'Administratie of organisatieonderdeel die gegevens levert'
+          required: false
+          type: string        
+        - name: referentienummer
+          in: header
+          required: false
+          type: string
+        - name: tijdstipbericht
+          in: header
+          required: false
+          type: string
+        - name: entiteittype
+          in: header
+          required: false
+          type: string
+      responses:
+        '200':
+          description: Gelukt
+          schema:
+            $ref: '#/definitions/IngeschrevenPersoon'
+    parameters:
+      - name: burgerservicenummer
+        in: query
+        required: true
+        type: string
+      - name: periodevan
+        in: query
+        description: 'periode.van'
+        required: true
+        type: integer
+        format: date-time  
+      - name: periodetotEnMet
+        in: query
+        description: 'periode.totEnMet'
+        required: true
+        type: integer
+        format: date-time  
+      - name: inclusiefVerblijfsplaatsHistorie
+        in: query
+        required: false
+        type: boolean
+        description: is standaard false, geef waarde 'true' of 'false' mee  
+      - name: inclusiefPartnerHistorie
+        in: query
+        required: false
+        type: boolean
+        description: is standaard false, geef waarde 'true' of 'false' mee  
+      - name: inclusiefVerblijfstitelHistorie
+        in: query
+        required: false
+        type: boolean
+        description: is standaard false, geef waarde 'true' of 'false' mee  
+definitions:
+  IngeschrevenPersoon:
+    type: object
+    properties:
+      ouder:
+        type: array
+        items:
+          $ref: '#/definitions/Persoon'
+      partner:
+        type: array
+        items:
+          $ref: '#/definitions/Persoon'     
+      telefoonnummer:
+        type: string
+      faxnummer:
+        type: string
+      emailadres:
+        type: string
+      nationaliteit:
+        type: array
+        items:
+          type: object
+          properties:
+            nationaliteitCode:
+              type: string
+            nationaliteitOmschrijving:
+              type: string
+            periodeGeldigheid:
+              type: object
+              properties:
+                van:
+                  format: date-time
+                  type: string
+                totEnMet:
+                  format: date-time
+                  type: string
+      verblijfstitel:
+        type: object
+        properties:
+          code:
+            type: string
+          omschrijving:
+            type: string
+          beginDatumGeldigheid:
+            format: date-time
+            type: string
+          eindDatumGeldigheid:
+            format: date-time
+            type: string
+  Persoon:
+    type: object
+    properties:
+      periodeGeldigheid:
+        type: object
+        properties:
+          van:
+            format: date-time
+            type: string
+          totEnMet:
+            format: date-time
+            type: string
+      voorlettersAanschrijving:
+        type: string
+      voornamen:
+        type: string
+      voorvoegselGeslachtsnaam:
+        type: string
+      geslachtsnaam:
+        type: string
+      geslachtsaanduiding:
+        type: string
+      aanschrijfwijze:
+        type: string
+      geboortedatum:
+        format: date-time
+        type: string
+      Verblijfsadres:
+        $ref: '#/definitions/Verblijfsadres'
+      Adresbuitenland:
+        $ref: '#/definitions/Adresbuitenland'
+  Verblijfsadres:
+        type: object
+        properties:
+          periodeGeldigheid:
+            type: object
+            properties:
+              van:
+                format: date-time
+                type: string
+              totEnMet:
+                format: date-time
+                type: string
+          identificatieNummerAanduiding:
+            type: integer
+          postcode:
+            type: string
+          huisnummer:
+            type: number
+          huisletter:
+            type: string
+          huisnummertoevoeging:
+            type: string
+          locatiebeschrijving:
+            type: string
+          naamOpenbareRuimte:
+            type: string
+          woonplaatsnaam:
+            type: string
+          woonplaatsIdentificatie:
+            type: string
+  Adresbuitenland:
+        type: object
+        properties:
+          landcode:
+            type: object
+            properties:
+              landnaam:
+                type: string
+              adresBuiteland1:
+                type: string
+              adresBuiteland2:
+                type: string
+              adresBuiteland3:
+                type: string
