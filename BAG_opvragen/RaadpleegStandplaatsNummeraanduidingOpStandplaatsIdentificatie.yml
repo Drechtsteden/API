@@ -1,8 +1,8 @@
 swagger: '2.0'
 info:
-  description: BAG Raadpleeg pand verblijfsobject nummeraanduiding op ligplaats identificatie
+  description: BAG Raadpleeg stand plaats nummeraanduiding op standplaatsidentificatie
   version: 1.0.0
-  title: BAG RaadpleegLigplaatsNummeraanduidingOpLigplaatsIdentificatie
+  title: BAG RaadpleegStandplaatsNummeraanduidingOpStandplaatsIdentificatie
   contact: {}
 host: zaaksysteem.greenvalley.nl
 basePath: /bg
@@ -13,10 +13,10 @@ consumes:
 produces:
   - application/json
 paths:
-  /RaadpleegLigplaatsNummeraanduidingOpLigplaatsIdentificatie:
+  /RaadpleegStandplaatsNummeraanduidingOpStandplaatsIdentificatie:
     get:
-      summary: 'Raadpleeg pand verblijfsobject nummeraanduiding op ligplaats identificatie'
-      description: 'Raadpleeg pand verblijfsobject nummeraanduiding op ligplaats identificatie'
+      summary: 'Raadpleeg stand plaats nummeraanduiding op standplaatsidentificatie'
+      description: 'Raadpleeg stand plaats nummeraanduiding op '
       produces:
         - application/json
       parameters:
@@ -71,25 +71,25 @@ paths:
         - name: entiteittype
           in: header
           required: false
-          type: string     
+          type: string
       responses:
         '200':
           description: OK
           schema:
             type: array
             items:
-              $ref: '#/definitions/Ligplaats'
+              $ref: '#/definitions/Standplaats'
     parameters:
-        - name: ligPlaatsIdentificatie
+        - name: standplaatsIdentificatie
           in: query
           required: true
           type: string
-        - name: inclusiefIngetrokkenLigplaatsen
+        - name: inclusiefIngetrokkenStandplaatsen
           in: query
           required: false
           type: boolean
 definitions:
-  Ligplaats:
+  Standplaats:
     type: object
     properties:
       adres:
@@ -111,15 +111,13 @@ definitions:
             type: string
           woonplaatsNaam:
             type: string
-          woonplaatsIdentificatieCode:
+          woonplaatsIdentificatie:
               type: string
-      adreswoonplaatsIdentificatie:
+      indicatieGeconstateerdeStandplaats:
         type: string
-      indicatieGeconstateerdeLigplaats:
+      standplaatsIdentificatie:
         type: string
-      ligplaatsIdentificatie:
-        type: string
-      ligplaatsStatus:
+      standplaatsStatus:
         type: string
       vlakGeometrie:
         type: object
@@ -131,4 +129,4 @@ definitions:
         type: string
       datumEindeGeldigheid:
         format: date-time
-        type: string      
+        type: string    

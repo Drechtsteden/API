@@ -1,8 +1,8 @@
 swagger: '2.0'
 info:
-  description: BAG Raadpleeg pand verblijfsobject nummeraanduiding op ligplaats identificatie
+  description: BAG Zoeknummeraanduiding op postcode en huisnummer
   version: 1.0.0
-  title: BAG RaadpleegLigplaatsNummeraanduidingOpLigplaatsIdentificatie
+  title: BAG ZoekNummeraanduidingOpPostcodeEnHuisnummer
   contact: {}
 host: zaaksysteem.greenvalley.nl
 basePath: /bg
@@ -13,10 +13,10 @@ consumes:
 produces:
   - application/json
 paths:
-  /RaadpleegLigplaatsNummeraanduidingOpLigplaatsIdentificatie:
+  /ZoekNummeraanduidingOpPostcodeEnHuisnummer:
     get:
-      summary: 'Raadpleeg pand verblijfsobject nummeraanduiding op ligplaats identificatie'
-      description: 'Raadpleeg pand verblijfsobject nummeraanduiding op ligplaats identificatie'
+      summary: 'Zoeknummeraanduiding op postcode en huisnummer'
+      description: 'Zoeknummeraanduiding op postcode en huisnummer'
       produces:
         - application/json
       parameters:
@@ -78,21 +78,62 @@ paths:
           schema:
             type: array
             items:
-              $ref: '#/definitions/Ligplaats'
+              $ref: '#/definitions/Nummeraanduiding'
     parameters:
-        - name: ligPlaatsIdentificatie
+        - name: postcode
           in: query
+          description: ''
           required: true
           type: string
-        - name: inclusiefIngetrokkenLigplaatsen
+        - name: huisnummer
           in: query
+          description: ''
+          required: true
+          type: integer
+          format: int32
+        - name: huisletter
+          in: query
+          description: ''
           required: false
-          type: boolean
+          type: string
+        - name: huisnummertoevoeging
+          in: query
+          description: ''
+          required: false
+          type: string
+        - name: locatieaanduiding
+          in: query
+          description: ''
+          required: false
+          type: string
 definitions:
-  Ligplaats:
+  Nummeraanduiding:
     type: object
     properties:
-      adres:
+      identificatieNummeraanduiding:
+        type: string
+      postcode:
+        type: string
+      huisnummer:
+        format: int32
+        type: integer
+      huisletter:
+        type: string
+      huisnummertoevoeging:
+        type: string
+      locatiebeschrijving:
+        type: string
+      naamOpenbareRuimte:
+        type: string
+      woonplaatsNaam:
+        type: string
+      woonplaatsIdentificatie:
+        type: string
+      indicatieHoofdadres:
+        type: string
+      indicatieGeconstateerdeNummeraanduiding:
+        type: string
+      hoofdadresVan:
         type: object
         properties:
           identificatieNummeraanduiding:
@@ -100,10 +141,11 @@ definitions:
           postcode:
             type: string
           huisnummer:
+            format: int32
             type: integer
           huisletter:
             type: string
-          huisnummerToevoeging:
+          huisnummertoevoeging:
             type: string
           locatiebeschrijving:
             type: string
@@ -111,24 +153,27 @@ definitions:
             type: string
           woonplaatsNaam:
             type: string
-          woonplaatsIdentificatieCode:
-              type: string
-      adreswoonplaatsIdentificatie:
-        type: string
-      indicatieGeconstateerdeLigplaats:
-        type: string
-      ligplaatsIdentificatie:
-        type: string
-      ligplaatsStatus:
-        type: string
-      vlakGeometrie:
+          woonplaatsIdentificatie:
+            type: string 
+      nevenadresVan:
         type: object
         properties:
-          representatie:
+          identificatieNummeraanduiding:
             type: string
-      datumBeginGeldigheid:   
-        format: date-time
-        type: string
-      datumEindeGeldigheid:
-        format: date-time
-        type: string      
+          postcode:
+            type: string
+          huisnummer:
+            format: int32
+            type: integer
+          huisletter:
+            type: string
+          huisnummertoevoeging:
+            type: string
+          locatiebeschrijving:
+            type: string
+          naamOpenbareRuimte:
+            type: string
+          woonplaatsNaam:
+            type: string
+          woonplaatsIdentificatie:
+            type: string 

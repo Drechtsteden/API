@@ -1,8 +1,8 @@
 swagger: '2.0'
 info:
-  description: BAG Raadpleeg pand verblijfsobject nummeraanduiding op ligplaats identificatie
+  description: BAG Zoek Openbareruimte op naam
   version: 1.0.0
-  title: BAG RaadpleegLigplaatsNummeraanduidingOpLigplaatsIdentificatie
+  title: BAG ZoekOpenbareruimteOpNaam
   contact: {}
 host: zaaksysteem.greenvalley.nl
 basePath: /bg
@@ -13,10 +13,10 @@ consumes:
 produces:
   - application/json
 paths:
-  /RaadpleegLigplaatsNummeraanduidingOpLigplaatsIdentificatie:
+  /ZoekOpenbareruimteOpNaam:
     get:
-      summary: 'Raadpleeg pand verblijfsobject nummeraanduiding op ligplaats identificatie'
-      description: 'Raadpleeg pand verblijfsobject nummeraanduiding op ligplaats identificatie'
+      summary: 'Zoek Openbareruimte op naam'
+      description: 'Zoek Openbareruimte op naam'
       produces:
         - application/json
       parameters:
@@ -78,57 +78,39 @@ paths:
           schema:
             type: array
             items:
-              $ref: '#/definitions/Ligplaats'
+              $ref: '#/definitions/Openbareruimte'
     parameters:
-        - name: ligPlaatsIdentificatie
+        - name: postcode
           in: query
+          description: ''
           required: true
           type: string
-        - name: inclusiefIngetrokkenLigplaatsen
+        - name: huisnummer
           in: query
+          description: ''
+          required: true
+          type: integer
+          format: int32
+        - name: huisletter
+          in: query
+          description: ''
           required: false
-          type: boolean
+          type: string
+        - name: huisnummertoevoeging
+          in: query
+          description: ''
+          required: false
+          type: string
+        - name: locatieaanduiding
+          in: query
+          description: ''
+          required: false
+          type: string
 definitions:
-  Ligplaats:
+  Openbareruimte:
     type: object
     properties:
-      adres:
-        type: object
-        properties:
-          identificatieNummeraanduiding:
-            type: string
-          postcode:
-            type: string
-          huisnummer:
-            type: integer
-          huisletter:
-            type: string
-          huisnummerToevoeging:
-            type: string
-          locatiebeschrijving:
-            type: string
-          naamOpenbareRuimte:
-            type: string
-          woonplaatsNaam:
-            type: string
-          woonplaatsIdentificatieCode:
-              type: string
-      adreswoonplaatsIdentificatie:
+      identificatie:
         type: string
-      indicatieGeconstateerdeLigplaats:
+      naamOpenbareRuimte:
         type: string
-      ligplaatsIdentificatie:
-        type: string
-      ligplaatsStatus:
-        type: string
-      vlakGeometrie:
-        type: object
-        properties:
-          representatie:
-            type: string
-      datumBeginGeldigheid:   
-        format: date-time
-        type: string
-      datumEindeGeldigheid:
-        format: date-time
-        type: string      
