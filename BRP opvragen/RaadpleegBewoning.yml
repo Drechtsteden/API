@@ -1,0 +1,164 @@
+swagger: '2.0'
+info:
+  description: Specificatie RSGB 3.0 Json opvragen NPS
+  version: 1.0.0
+  title: NPS op RaadpleegBewoning
+  contact: {}
+host: zaaksysteem.greenvalley.nl
+basePath: /bg
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+ /RaadpleegBewoning:
+    get:
+      summary:  Raadpleeg bewoning
+      description: 'Raadpleeg bewoning'
+      produces:
+        - application/json
+      parameters:
+        - name: zenderOrganisatie
+          in: header
+          description: 'Organisatiecode van de opvragende organisatie (kan zijn een gemeentecode, RSIN, OIN)'
+          required: false
+          type: string
+        - name: zenderApplicatie
+          in: header
+          description: 'Applicatiecode van de opvragende organisatie'
+          required: false
+          type: string
+        - name: zenderGebruiker
+          in: header
+          description: 'Organisatiebrede unieke gebruikerIdentificatie'
+          required: false
+          type: string
+        - name: zenderAdministratie
+          in: header
+          description: 'Administratie of organisatieonderdeel die gegevens opvraagt'
+          required: false
+          type: string          
+        - name: ontvangerOrganisatie
+          in: header
+          description: 'Organisatiecode van de leverende organisatie (kan zijn een gemeentecode, RSIN, OIN)'
+          required: false
+          type: string
+        - name: ontvangerApplicatie
+          in: header
+          description: 'Applicatiecode van de leverende organisatie'
+          required: false
+          type: string
+        - name: ontvangerGebruiker
+          in: header
+          description: 'Organisatiebrede unieke gebruikerIdentificatie'
+          required: false
+          type: string
+        - name: ontvangerAdministratie
+          in: header
+          description: 'Administratie of organisatieonderdeel die gegevens levert'
+          required: false
+          type: string        
+        - name: referentienummer
+          in: header
+          required: false
+          type: string
+        - name: tijdstipbericht
+          in: header
+          required: false
+          type: string
+        - name: entiteittype
+          in: header
+          required: false
+          type: string
+      responses:
+        '200':
+          description: Gelukt
+          schema:
+            $ref: '#/definitions/Bewoning'
+    parameters:
+      - name: identificatieNummeraanduiding
+        in: query
+        required: true
+        type: string
+      - name: periodeVan
+        in: query
+        description: 'adres.geldigheid.van. Geeft resultaten vanaf die datum en later, formaat DD-MM-YYYY'
+        required: false
+        type: string
+      - name: periodeTotEnMet
+        in: query
+        description: 'adres.geldigheid.totEnMet. Geeft resultaten vanaf die datum en eerder, formaat DD-MM-YYYY'
+        required: false
+        type: string
+      - name: inclusiefOverledenPersoon
+        in: query
+        required: false
+        type: boolean
+        description: is standaard false, geef waarde 'true' of 'false' mee              
+definitions:
+  Bewoning:
+    type: object
+    properties:
+      voorlettersAanschrijving:
+        type: string
+      voornamen:
+        type: string
+      voorvoegselGeslachtsnaam:
+        type: string
+      geslachtsnaam:
+        type: string
+      geslachtsaanduiding:
+        type: string
+      aanschrijfwijze:
+        type: string
+      geboortedatum:
+        format: date-time
+        type: string
+      burgerservicenummer:
+        type: string
+      verblijfsadres:
+        type: object
+        properties:
+          periodeGeldigheid:
+            type: object
+            properties:
+              van:
+                format: date-time
+                type: string
+              totEnMet:
+                format: date-time
+                type: string
+          identificatieNummerAanduiding:
+            type: string
+          postcode:
+            type: string
+          huisnummer:
+            type: string
+          huisletter:
+            type: string
+          huisnummertoevoeging:
+            type: string
+          locatiebeschrijving:
+            type: string
+          naamOpenbareRuimte:
+            type: string
+          woonplaatsnaam:
+            type: string
+          woonplaatsIdentificatie:
+            type: string
+      adresbuitenland:
+        type: object
+        properties:
+          landcode:
+            type: object
+            properties:
+              landnaam:
+                type: string
+              adresBuitenland1:
+                type: string
+              adresBuitenland2:
+                type: string
+              adresBuitenland3:
+                type: string
