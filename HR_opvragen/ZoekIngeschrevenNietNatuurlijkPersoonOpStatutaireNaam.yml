@@ -1,8 +1,8 @@
 swagger: '2.0'
 info:
-  description: Specificatie StUF Json opvragen NNP
+  description: Specificatie RSGB 3.0 Json opvragen NNP
   version: 1.0.0
-  title: NNP ZoekIngeschrevenNietNatuurlijkPersoonOpStatutaireNaam
+  title: ZoekIngeschrevenNietNatuurlijkPersoonOpStatutaireNaam
   contact: {}
 host: zaaksysteem.greenvalley.nl
 basePath: /bg
@@ -84,126 +84,56 @@ paths:
         in: query
         required: true
         type: string
+        description: mag een wildcard bevatten
 definitions:
   NietNatuurlijkPersoon:
     type: object
     properties:
-      inn.nnpId:
-        type: string
-        description: 'Een in het handelsregister over een NIET-NATUURLIJK PERSOON opgenomen, door de Kamer van Koophandel toegekend, uniek nummer. Verplicht bij INGESCHREVEN NIET-NATUURLIJK PERSOON. Verplicht indien INGESCHREVEN NIET-NATUURLIJK PERSOON.'
-      authentiek:
-        type: boolean
-        description: 'Aanduiding of het een authentiek gegeven betreft'
-      sub.typering:
-        type: string
-        description: 'Het onderscheid van een SUBJECT in een INGEZETENE, een NIETINGEZETENE, een ANDER NATUURLIJK PERSOON, een INGESCHREVEN NIET-NATUURLIJK PERSOON, een ANDER BUITENLANDS NIET-NATUURLIJK PERSOON dan wel een VESTIGING.'
       statutaireNaam:
         type: string
-      inn.rechtsvorm:
-        type: string
-        description: 'Aanduiding van de vorm die in rechte bekend is van de INGESCHREVEN NIET-NATUURLIJKE PERSOON. Verplicht bij INGESCHREVEN NIET-NATUURLIJK PERSOON. Verplicht indien INGESCHREVEN NIET-NATUURLIJK PERSOON.'
-      nn.statutaireZetel:
-        type: string      
-        description: 'De plaats waar de INGESCHREVEN NIET-NATUURLIJKE PERSOON volgens haar statuten gevestigd is. Verplicht bij INGESCHREVEN NIET-NATUURLIJK PERSOON. Verplicht indien INGESCHREVEN NIET-NATUURLIJK PERSOON.'
       datumAanvang:
         format: date-time
         type: string
-        description: 'Datum aanvang'
+      datumBeeindiging:
+        format: date-time
+        type: string
+      rsin:
+        type: string
+      rechtsvorm:
+        type: string
       datumVoortzetting:
         format: date-time
         type: string
-        description: 'Datum voortzetting'
-      datumEinde:
-        format: date-time
-        type: string
-        description: 'Datum einde'
       bezoekAdres:
         type: object
-        description: 'Geeft aan of het een bezoekadres betreft'
         properties:
-          aoaAdres:
-            $ref: '#/definitions/AOAobject'
-      sub.telefoonnummer:
-        type: string
-        description: 'Telefoonnummer waaronder het subject in de regel bereikbaar is'
-      sub.faxnummer:
-        type: string
-        description: 'Faxnummer waaronder het subject in de regel bereikbaar is'
-      sub.emailadres:
-        type: string
-        description: 'Elektronisch postadres waaronder het subject in de regel bereikbaar is'
-      sub.url:
-        type: string
-        description: 'Het label of etiket dat aan de specifieke informatiebron, zoals een webpagina, een bestand of een plaatje op internet is toegewezen waar het SUBJECT in de regel op het internet vindbaar is.'
-      sub.bankrekening:
-        $ref: '#/definitions/Bankrekening'
-      sub.kvkNummer:
-        type: object
-        description: 'Landelijk uniek identificerend administratienummer van een VESTIGING zoals toegewezen door de Kamer van Koophandel (KvK)'
-        properties:
-          kvkNummer:
-            $ref: '#/definitions/MaatschappelijkeActiviteit'
-  AOAobject:
-    type: object
-    description: 'AOAobject'
-    properties:
-      wpl.woonplaatsNaam:
-        type: string
-        description: 'Woonplaatsnaam'
-      gor.openbareRuimteNaam:
-        type: string
-        description: 'Een naam die aan een openbare ruimte is toegekend in een daartoe strekkend formeel gemeentelijk besluit. Een openbare ruimte is een door een bevoegde gemeentelijk orgaan als zodanig aangewezen. Voor Naam openbareruimte mag officiële straatnaam gelezen worden'
-      gor.straatnaam:
-        type: string
-        description: 'De officiële straatnaam zoals in het gemeente bestuur is vastgesteld. De naam wordt zo nodig ingekort conform de specificaties van de BOCO-norm'
-      aoa.postcode:
-        type: string
-        description: 'Postcode'
-        minLength: 6
-        maxLength: 6
-        pattern: 9999NN
-      aoa.huisnummer:
-        type: integer
-        description: 'Huisnummer'
-        minimum: 1
-      aoa.huisletter:
-        type: string
-        description: 'Huisletter'
-      aoa.huisnummertoevoeging:
-        type: string
-        description: 'Huisnummertoevoeging'
-      aoa.identificatie:
-        type: number
-        description: 'Het unieke identifiecatienummer van de Adresseerbaar Object Aanduiding'
-  MaatschappelijkeActiviteit:
-    type: object
-    description: 'MaatschappelijkeActiviteit'
-    properties:
-      sub.kvkNummer:
-        type: string
-        description: 'Landelijk uniek identificerend administratienummer van een VESTIGING zoals toegewezen door de Kamer van Koophandel (KvK)'
-      handelsnamen:
-        type: array
-        description: 'handelsnamen'
-        items:
-          $ref: '#/definitions/Handelsnaam'
-  Handelsnaam:
-    type: object
-    description: 'Handelsnaam'
-    properties:
-      handelsnaam:
-        type: string
-        description: 'De naam waaronder de onderneming handelt'
-      verkorteNaam:
-        type: string
-        description: 'De door de Kamer van Koophandel bepaalde naam van de onderneming ten behoeve van adresseringsdoeleinden'
-  Bankrekening:
-    type: object
-    description: 'Het nummer van een Nederlandse bank/girorekening, zoals dat door een bankinstelling als identificator aan een overeenkomst tussen de bank en een of meer subjecten wordt toegekend, op basis waarvan het SUBJECT in de regel financieel communiceert'
-    properties:
-      iban:
-        type: string
-        description: 'Een International Bank Account Number (IBAN) wordt gebruikt om internationale transacties tussen rekeningen en banken gelegen in verschillende landen vlotter te laten verlopen.'
-      bic:
-        type: string
-        description: 'De Business Identifier Code, afgekort BIC, is een code die wordt gebruikt bij grensoverschrijdend betalingsverkeer om een bank te identificeren.'
+          adres:
+            type: object
+            properties:
+              identificatieNummerAanduiding:
+                type: number
+              postcode:
+                type: string
+              huisnummer:
+                type: number
+              huisletter:
+                type: string
+              huisnummertoevoeging:
+                type: string
+              locatiebeschrijving:
+                type: string
+              openbareruimtenaam:
+                type: string
+              woonplaatsNaam:
+                type: string
+              woonplaatsIdentificatie:
+                type: string
+          periodeGeldigheid:
+            type: object
+            properties:
+              van:
+                format: date-time
+                type: string
+              totEnMet:
+                format: date-time
+                type: string

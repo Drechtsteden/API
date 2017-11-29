@@ -82,168 +82,47 @@ paths:
     parameters:
         - name: nummeraanduidingIdentificatie
           in: query
-          description: 'De identificatiecodes nummeraanduiding waaronder nevenadressen van een STANDPLAATS, die in het kader van de basisregistratie gebouwen als zodanig zijn aangemerkt, zijn opgenomen in de basisregistratie adressen.'
           required: true
           type: string
         - name: inclusiefBeeindigdeVestigingen
           in: query
-          description: ''
-          required: true
+          description: is standaard false, geef waarde 'true' of 'false' mee 
+          required: false
           type: boolean
 definitions:
   Vestiging:
     type: object
     properties:
-      vestigingsnummer:
+      vestigingsNummer:
         type: string
-        description: 'Landelijk uniek identificerend administratienummer van een VESTIGING zoals toegewezen door de Kamer van Koophandel (KvK)'
-      authentiek:
-        type: boolean
-        description: 'Aanduiding of het een authentiek gegeven betreft'
-      volgorde:
-        type: integer
-        description: 'Volgorde van handelsnamen'
-      handelsnaam:
-        $ref: '#/definitions/Handelsnaam'
-      handelsnaamVerkort:
-        $ref: '#/definitions/Handelsnaam'
-      datumAanvang:
-        format: date-time
-        type: string
-        description: 'Datum aanvang'
-      datumEinde:
-        format: date-time
-        type: string
-        description: 'Datum einde'
       typeringVestiging:
-        enum:
-          - Hoofdvestiging
-          - Nevenvestiging
         type: string
-        description: 'typeringVestiging'
-      verblijfsadres:
-        type: object
-        description: 'Geeft aan het het een locatie adres of een correspondentie adres betreft'
-        properties:
-          aoaAdres:
-            $ref: '#/definitions/AOAobject'
-      sub.correspondentieAdres:
-        type: object
-        description: 'Geeft aan het het een correspondentie adres betreft'
-        properties:
-          aoaAdres:
-            $ref: '#/definitions/AOAobject'
-          sub.verblijfBuitenland:
-            $ref: '#/definitions/BuitenlandsAdres'
-          sub.postadresType:
-            type: string
-            description: 'Indicatie of het postadres een antwoordnummer (A) of postbus (P) is'
-            enum:
-              - postbus
-              - antwoordnummer
-          sub.postadresNummer:
-            type: string
-            description: 'De postcode van het postadres'
-      sub.telefoonnummer:
-        type: string
-        description: 'Telefoonnummer waaronder het subject in de regel bereikbaar is'
-      sub.faxnummer:
-        type: string
-        description: 'Faxnummer waaronder het subject in de regel bereikbaar is'
-      sub.emailadres:
-        type: string
-        description: 'Elektronisch postadres waaronder het subject in de regel bereikbaar is'
-      sub.url:
-        type: string
-        description: 'Het label of etiket dat aan de specifieke informatiebron, zoals een webpagina, een bestand of een plaatje op internet is toegewezen waar het SUBJECT in de regel op het internet vindbaar is.'
-      sub.bankrekening:
-        $ref: '#/definitions/Bankrekening'
-      sub.kvkNummer:
-        type: object
-        description: 'Landelijk uniek identificerend administratienummer van een VESTIGING zoals toegewezen door de Kamer van Koophandel (KvK)'
-        properties:
-          kvkNummer:
-            $ref: '#/definitions/MaatschappelijkeActiviteit'
-  MaatschappelijkeActiviteit:
-    type: object
-    description: 'MaatschappelijkeActiviteit'
-    properties:
-      sub.kvkNummer:
-        type: string
-        description: 'Landelijk uniek identificerend administratienummer van een VESTIGING zoals toegewezen door de Kamer van Koophandel (KvK)'
       handelsnamen:
-        type: array
-        description: 'handelsnamen'
-        items:
-          $ref: '#/definitions/Handelsnaam'
-  Handelsnaam:
-    type: object
-    description: 'Handelsnaam'
-    properties:
-      handelsnaam:
-        type: string
-        description: 'De naam waaronder de onderneming handelt'
-      verkorteNaam:
-        type: string
-        description: 'De door de Kamer van Koophandel bepaalde naam van de onderneming ten behoeve van adresseringsdoeleinden'
-  AOAobject:
-    type: object
-    description: 'AOAobject'
-    properties:
-      wpl.woonplaatsNaam:
-        type: string
-        description: 'Woonplaatsnaam'
-      gor.openbareRuimteNaam:
-        type: string
-        description: 'Een naam die aan een openbare ruimte is toegekend in een daartoe strekkend formeel gemeentelijk besluit. Een openbare ruimte is een door een bevoegde gemeentelijk orgaan als zodanig aangewezen. Voor Naam openbareruimte mag officiële straatnaam gelezen worden'
-      gor.straatnaam:
-        type: string
-        description: 'De officiële straatnaam zoals in het gemeente bestuur is vastgesteld. De naam wordt zo nodig ingekort conform de specificaties van de BOCO-norm'
-      aoa.postcode:
-        type: string
-        description: 'Postcode'
-        minLength: 6
-        maxLength: 6
-        pattern: 9999NN
-      aoa.huisnummer:
-        type: integer
-        description: 'Huisnummer'
-        minimum: 1
-      aoa.huisletter:
-        type: string
-        description: 'Huisletter'
-      aoa.huisnummertoevoeging:
-        type: string
-        description: 'Huisnummertoevoeging'
-      aoa.identificatie:
-        type: number
-        description: 'Het unieke identifiecatienummer van de Adresseerbaar Object Aanduiding'
-  BuitenlandsAdres:
-    type: object
-    description: 'BuitenlandsAdres'
-    properties:
-      lnd.landnaam:
-        type: string
-        description: 'Landnaam'
-      lnd.landcode:
-        type: integer
-        description: 'Het LAND waarin het SUBJECT heeft aangegeven te (gaan) verblijven dan wel verblijft. De landcode is gemodeleerd, maar voor die "view" datamodel kan de genwenste waarde hier opgeslagen worden'
-      sub.adresBuitenland1:
-        type: string
-        description: 'Het eerste deel van het adres in het buitenland dat het SUBJECT opgeeft bij vertrek naar het buitenland dan wel waar het SUBJECT in het buitenland verblijft'
-      sub.adresBuitenland2:
-        type: string
-        description: 'Het tweede deel van het adres in het buitenland dat het SUBJECT opgeeft bij vertrek naar het buitenland dan wel waar het SUBJECT in het buitenland verblijft'
-      sub.adresBuitenland3:
-        type: string
-        description: 'Het derde deel van het adres in het buitenland dat het SUBJECT opgeeft bij vertrek naar het buitenland dan wel waar het SUBJECT in het buitenland verblijft'
-  Bankrekening:
-    type: object
-    description: 'Het nummer van een Nederlandse bank/girorekening, zoals dat door een bankinstelling als identificator aan een overeenkomst tussen de bank en een of meer subjecten wordt toegekend, op basis waarvan het SUBJECT in de regel financieel communiceert'
-    properties:
-      iban:
-        type: string
-        description: 'Een International Bank Account Number (IBAN) wordt gebruikt om internationale transacties tussen rekeningen en banken gelegen in verschillende landen vlotter te laten verlopen.'
-      bic:
-        type: string
-        description: 'De Business Identifier Code, afgekort BIC, is een code die wordt gebruikt bij grensoverschrijdend betalingsverkeer om een bank te identificeren.'
+        type: object
+        properties:
+          handelsnaam:
+            type: string
+          verkorteNaam:
+            type: string
+      vestigingsadres:
+        type: object
+        properties:
+          indentificatieNummerAanduiding:
+            type: string
+          postcode:
+            type: string
+          huisnummer:
+            type: number
+          huisletter:
+            type: string
+          huisnummertoevoeging:
+            type: string
+          locatiebeschrijving:
+            type: string
+          naamOpenbareRuimte:
+            type: string
+          woonplaatsNaam:
+            type: string 
+          woonplaatsIdentificatie:
+            type: string
+        
