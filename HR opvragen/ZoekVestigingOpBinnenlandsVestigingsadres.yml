@@ -1,0 +1,145 @@
+swagger: '2.0'
+info:
+  description: Specificatie StUF Json opvragen NNP
+  version: 1.0.0
+  title: NNP ZoekVestigingOpBinnenlandsVestigingsadres
+  contact: {}
+host: zaaksysteem.greenvalley.nl
+basePath: /bg
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /ZoekVestigingOpBinnenlandsVestigingsadres:
+    get:
+      summary: Opvragen NietNatuurlijkPersoon op BinnenlandsVestigingsadres
+      description: 'Vraagt ingeschreven NietNatuurlijkPersoon op BinnenlandsVestigingsadres.'
+      produces:
+        - application/json
+      parameters:
+        - name: zenderOrganisatie
+          in: header
+          description: 'Organisatiecode van de opvragende organisatie (kan zijn een gemeentecode, RSIN, OIN)'
+          required: false
+          type: string
+        - name: zenderApplicatie
+          in: header
+          description: 'Applicatiecode van de opvragende organisatie'
+          required: false
+          type: string
+        - name: zenderGebruiker
+          in: header
+          description: 'Organisatiebrede unieke gebruikerIdentificatie'
+          required: false
+          type: string
+        - name: zenderAdministratie
+          in: header
+          description: 'Administratie of organisatieonderdeel die gegevens opvraagt'
+          required: false
+          type: string          
+        - name: ontvangerOrganisatie
+          in: header
+          description: 'Organisatiecode van de leverende organisatie (kan zijn een gemeentecode, RSIN, OIN)'
+          required: false
+          type: string
+        - name: ontvangerApplicatie
+          in: header
+          description: 'Applicatiecode van de leverende organisatie'
+          required: false
+          type: string
+        - name: ontvangerGebruiker
+          in: header
+          description: 'Organisatiebrede unieke gebruikerIdentificatie'
+          required: false
+          type: string
+        - name: ontvangerAdministratie
+          in: header
+          description: 'Administratie of organisatieonderdeel die gegevens levert'
+          required: false
+          type: string        
+        - name: referentienummer
+          in: header
+          required: false
+          type: string
+        - name: tijdstipbericht
+          in: header
+          required: false
+          type: string
+        - name: entiteittype
+          in: header
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Vestiging'
+    parameters:
+        - name: woonplaatsnaam
+          in: query
+          required: true
+          type: string
+        - name: naamOpenbareRuimte
+          in: query
+          required: true
+          type: string
+          description: mag een wildcard bevatten door '%' te gebruiken
+        - name: huisnummer
+          in: query
+          required: true
+          type: string
+        - name: huisletter
+          in: query
+          required: false
+          type: string
+        - name: huisnummertoevoeging
+          in: query
+          required: false
+          type: string
+        - name: inclusiefBeeindigdeVestigingen
+          in: query
+          description: is standaard false, geef waarde 'true' of 'false' mee 
+          required: false
+          type: boolean
+definitions:
+  Vestiging:
+    type: object
+    properties:
+      vestigingsNummer:
+        type: string
+      typeringVestiging:
+        type: string
+      handelsnamen:
+        type: object
+        properties:
+          handelsnaam:
+            type: string
+          verkorteNaam:
+            type: string
+      vestigingsadres:
+        type: object
+        properties:
+          indentificatieNummerAanduiding:
+            type: string
+          postcode:
+            type: string
+          huisnummer:
+            type: number
+          huisletter:
+            type: string
+          huisnummertoevoeging:
+            type: string
+          locatiebeschrijving:
+            type: string
+          naamOpenbareRuimte:
+            type: string
+          woonplaatsNaam:
+            type: string 
+          woonplaatsIdentificatie:
+            type: string
+        

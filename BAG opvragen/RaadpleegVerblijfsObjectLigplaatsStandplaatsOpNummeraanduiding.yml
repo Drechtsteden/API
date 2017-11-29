@@ -1,0 +1,278 @@
+swagger: '2.0'
+info:
+  description: BAG Raadpleeg verblijfsobjects ligplaats standplaats op nummeraanduiding
+  version: 1.0.0
+  title: BAG RaadpleegVerblijfsobjectLigplaatsStandplaatsOpNummeraanduiding
+  contact: {}
+host: zaaksysteem.greenvalley.nl
+basePath: /bg
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /RaadpleegVerblijfsobjectLigplaatsStandplaatsOpNummeraanduiding:
+    get:
+      summary: 'Raadpleeg verblijfsobject ligplaats standplaats op nummeraanduiding'
+      description: 'Raadpleeg verblijfsobject ligplaats standplaats op nummeraanduiding'
+      produces:
+        - application/json
+      parameters:
+        - name: zenderOrganisatie
+          in: header
+          description: 'Organisatiecode van de opvragende organisatie (kan zijn een gemeentecode, RSIN, OIN)'
+          required: false
+          type: string
+        - name: zenderApplicatie
+          in: header
+          description: 'Applicatiecode van de opvragende organisatie'
+          required: false
+          type: string
+        - name: zenderGebruiker
+          in: header
+          description: 'Organisatiebrede unieke gebruikerIdentificatie'
+          required: false
+          type: string
+        - name: zenderAdministratie
+          in: header
+          description: 'Administratie of organisatieonderdeel die gegevens opvraagt'
+          required: false
+          type: string          
+        - name: ontvangerOrganisatie
+          in: header
+          description: 'Organisatiecode van de leverende organisatie (kan zijn een gemeentecode, RSIN, OIN)'
+          required: false
+          type: string
+        - name: ontvangerApplicatie
+          in: header
+          description: 'Applicatiecode van de leverende organisatie'
+          required: false
+          type: string
+        - name: ontvangerGebruiker
+          in: header
+          description: 'Organisatiebrede unieke gebruikerIdentificatie'
+          required: false
+          type: string
+        - name: ontvangerAdministratie
+          in: header
+          description: 'Administratie of organisatieonderdeel die gegevens levert'
+          required: false
+          type: string        
+        - name: referentienummer
+          in: header
+          required: false
+          type: string
+        - name: tijdstipbericht
+          in: header
+          required: false
+          type: string
+        - name: entiteittype
+          in: header
+          required: false
+          type: string     
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Verblijfsobject'
+    parameters:
+        - name: identificatieNummeraanduiding
+          in: query
+          required: true
+          type: string
+        - name: inclusiefIngetrokkenVerblijfsobject
+          in: query
+          required: false
+          type: boolean
+        - name: inclusiefIngetrokkenLigplaats
+          in: query
+          required: false
+          type: boolean
+        - name: inclusiefIngetrokkenStandplaats
+          in: query
+          required: false
+          type: boolean
+definitions:
+  Verblijfsobject:
+    type: object
+    properties:
+      adres:
+        type: object
+        properties:
+          identificatieNummeraanduiding:
+            type: string
+          postcode:
+            type: string
+          huisnummer:
+            type: integer
+          huisletter:
+            type: string
+          huisnummerToevoeging:
+            type: string
+          locatiebeschrijving:
+            type: string
+          naamOpenbareRuimte:
+            type: string
+          woonplaatsNaam:
+            type: string
+          woonplaatsIdentificatieCode:
+            type: string
+      aantalKamers:
+        format: int32       
+        type: integer 
+      hoogsteBouwlaagVerblijfsobject:
+        format: int32
+        type: integer
+      indicatieGeconstateerdVerblijfsobject:
+        type: string
+      laagsteBouwlaagVerblijfsobject:
+        format: int32
+        type: integer
+      ontsluitingVerdieping:
+        type: string
+      soortWoonobject:
+        type: string
+      toegangBouwlaagVerblijfsobject:
+        format: int32
+        type: integer
+      verblijfsobjectidentificatie:
+        type: string
+      verblijfsobjectStatus:
+        format: int32
+        type: integer
+      puntGeometrie:
+        type: object
+        properties:
+          representatie:
+            type: string
+      maaktDeelUitVan:
+        type: object
+        properties:
+          datumBeginGeldigheid:   
+            format: date-time
+            type: string
+          datumEindeGeldigheid:
+            format: date-time
+            type: string
+          pand:
+            type: object
+            properties:
+              pandidentificatie:  
+                type: string
+      bouwkundigeBestemmingenActueel:
+        type: array
+        items:
+              enum:
+              - doeleindenvoorwonen
+              - eensgezinswoning
+              - bejaardenwoning
+              - recreatiewoning
+              - meergezinswoning
+              - dienstwoning
+              - zorgwoonverblijf
+              - aanleunwoonverblijf
+              - bejaardenwoonverblijfinbejaardenoordcentralekeuken
+              - jongerenwooneenheid
+              - gehandicaptenwooneenheid
+              - doeleindenvoornietwonen
+              - doeleindenvoorhandelhorecaenbedrijf
+              - detailhandel
+              - cafebarrestaurant
+              - hotellogies
+              - kantoor
+              - opslagendistributie
+              - fabricageenproductie
+              - onderhoudenreparatie
+              - laboratoria
+              - overigedoeleindenvoorhandelhorecaenbedrijf
+              - doeleindenvoorcultuur
+              - wijkbuurtverenigingsactiviteiten
+              - congres
+              - theaterenconcert
+              - musea
+              - expositie
+              - bioscoop
+              - bibliotheek
+              - overigedoeleindenvoorcultuur
+              - doeleindenvoorrecreatie
+              - sportbuiten
+              - sportbinnen
+              - recreatie
+              - zwembad
+              - dierenverzorging
+              - natuurenlandschap
+              - overigedoeleindenvoorrecreatie
+              - doeleindenvooragrarischbedrijf
+              - akkerbouw
+              - veeteelt
+              - tuinbouw
+              - gemengdbedrijf
+              - overigedoeleindenvooragrarischbedrijf
+              - doeleindenvooronderwijs
+              - kinderopvang
+              - basisschool
+              - algemeenvoortgezetonderwijs
+              - hogerberoepsonderwijs
+              - academischonderwijs
+              - bijzonderonderwijs
+              - vrijetijdsonderwijs
+              - overigeonderwijs
+              - doeleindenvoorgezondheidszorg
+              - ziekenhuis
+              - polikliniek
+              - praktijkruimte
+              - verpleegtehuis
+              - verzorgingstehuisenbejaardentehuis
+              - dagverblijf
+              - wijkverzorging
+              - psychiatrischeinrichting
+              - overigedoeleindenvoorgezondheidszorg
+              - doeleindenvoorverkeer
+              - stallingfietsenautos
+              - wegverkeer
+              - spoorwegverkeer
+              - luchtvaart
+              - scheepvaart
+              - overigedoeleindenvoorverkeer
+              - doeleindenvoornutsvoorzieningen
+              - waternutsdoeleinden
+              - gas
+              - elektriciteit
+              - CAI
+              - telecommunicatie
+              - waterschapsenwaterverdediging
+              - overigedoeleindenvoornutsvoorzieningen
+              - anderedoeleindenvanopenbaarnut
+              - gemeentehuis
+              - politie
+              - brandweer
+              - gevangenisgesticht
+              - begraafplaatscrematorium
+              - godsdienstkerkkloostered
+              - defensie
+              - overigedoeleindenvanopenbaarnut
+              type: string
+      brutoInhoud:
+        format: int32
+        type: integer
+      datumBeginGeldigheid:
+        format: date-time
+        type: string
+      datumEindeGeldigheid:
+        format: date-time
+        type: string
+      gebruiksdoelGebouwdObject:
+        type: array
+        items:
+          type: string
+      inwinningswijzeOppervlakte:
+        type: string
+      oppervlakteVerblijfsobject:
+        format: int32
+        type: integer
+      statusVoortgangBouw:
+        type: string
