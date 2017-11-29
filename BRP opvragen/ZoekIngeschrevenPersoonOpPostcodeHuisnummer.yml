@@ -1,0 +1,182 @@
+swagger: '2.0'
+info:
+  description: Specificatie RSGB 3.0 Json opvragen NPS
+  version: 1.0.0
+  title: NPS op ZoekIngeschrevenPeroonOpPostcodeHuisnummer
+  contact: {}
+host: zaaksysteem.greenvalley.nl
+basePath: /bg
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /ZoekIngeschrevenPeroonOpPostcodeHuisnummer:
+    get:
+      summary:  Zoek ingeschreven persoon op postcode en huisnummer
+      description: 'Zoek ingeschreven persoon op postcode en huisnummer'
+      produces:
+        - application/json
+      parameters:
+        - name: zenderOrganisatie
+          in: header
+          description: 'Organisatiecode van de opvragende organisatie (kan zijn een gemeentecode, RSIN, OIN)'
+          required: false
+          type: string
+        - name: zenderApplicatie
+          in: header
+          description: 'Applicatiecode van de opvragende organisatie'
+          required: false
+          type: string
+        - name: zenderGebruiker
+          in: header
+          description: 'Organisatiebrede unieke gebruikerIdentificatie'
+          required: false
+          type: string
+        - name: zenderAdministratie
+          in: header
+          description: 'Administratie of organisatieonderdeel die gegevens opvraagt'
+          required: false
+          type: string          
+        - name: ontvangerOrganisatie
+          in: header
+          description: 'Organisatiecode van de leverende organisatie (kan zijn een gemeentecode, RSIN, OIN)'
+          required: false
+          type: string
+        - name: ontvangerApplicatie
+          in: header
+          description: 'Applicatiecode van de leverende organisatie'
+          required: false
+          type: string
+        - name: ontvangerGebruiker
+          in: header
+          description: 'Organisatiebrede unieke gebruikerIdentificatie'
+          required: false
+          type: string
+        - name: ontvangerAdministratie
+          in: header
+          description: 'Administratie of organisatieonderdeel die gegevens levert'
+          required: false
+          type: string        
+        - name: referentienummer
+          in: header
+          required: false
+          type: string
+        - name: tijdstipbericht
+          in: header
+          required: false
+          type: string
+        - name: entiteittype
+          in: header
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/NatuurlijkPersoon'
+    parameters:
+        - name: postcode
+          in: query
+          required: true
+          type: string
+        - name: huisnummer
+          in: query
+          required: true
+          type: integer
+        - name: huisletter
+          in: query
+          required: false
+          type: string
+        - name: huisnummertoevoeging
+          in: query
+          required: false
+          type: string
+        - name: locatieaanduiding
+          in: query
+          required: false
+          type: string
+        - name: periodeVan
+          in: query
+          description: 'adres.geldigheid.van. Geeft resultaten vanaf die datum en later, formaat DD-MM-YYYY'
+          required: false
+          type: string
+        - name: periodeTotEnMet
+          in: query
+          description: 'adres.geldigheid.totEnMet. Geeft resultaten vanaf die datum en eerder, formaat DD-MM-YYYY'
+          required: false
+          type: string
+        - name: inclusiefOverledenPersoon
+          in: query
+          required: false
+          type: boolean
+          description: is standaard false, geef waarde 'true' of 'false' mee     
+definitions:
+  NatuurlijkPersoon:
+    type: object
+    properties:
+      voorlettersAanschrijving:
+        type: string
+      voornamen:
+        type: string
+      voorvoegselGeslachtnaam:
+        type: string
+      geslachtsnaam:
+        type: string
+      geslachtsaanduiding:
+        type: string
+      aanschrijfwijze:
+        type: string
+      geboorteDatum:
+        format: date-time
+        type: string
+      burgerservicenummer:
+        type: number
+      Verblijfsadres:
+        type: object
+        properties:
+          periodeGeldigheid:
+            type: object
+            properties:
+              van:
+                format: date-time
+                type: string
+              totEnMet:
+                format: date-time
+                type: string
+          identificatieNummerAanduiding:
+            type: number
+          postcode:
+            type: string
+          huisnummer:
+            type: number
+          huisletter:
+            type: string
+          huisnummertoevoeging:
+            type: string
+          locatieBeschrijving:
+            type: string
+          naamOpenbareRuimte:
+            type: string
+          woonplaatsnaam:
+            type: string
+          woonplaatsIdentificatie:
+            type: string
+      Adresbuiteland:
+        type: object
+        properties:
+          landcode:
+            type: object
+            properties:
+              landnaam:
+                type: string
+              adresBuiteland1:
+                type: string
+              adresBuiteland2:
+                type: string
+              adresBuiteland3:
+                type: string
