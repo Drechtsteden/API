@@ -1,0 +1,125 @@
+swagger: '2.0'
+info:
+  description: Zoek kadastrale onroerende zaak op zakelijkrecht ander nietnatuurlijkpersoon
+  version: 1.0.0
+  title: Zoek kadastrale onroerende zaak op zakelijkrecht ander nietnatuurlijkpersoon
+  contact: {}
+host: zaaksysteem.greenvalley.nl
+basePath: /bg
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+ /ZoekKadastraleOnroerendeZaakOpZakelijkRechtAnderNietNatuurlijkPersoon:
+    get:
+      summary:  Zoek kadastrale onroerende zaak op zakelijkrecht ander nietnatuurlijkpersoon
+      description: 'Zoek kadastrale onroerende zaak op zakelijkrecht ander nietnatuurlijkpersoon'
+      produces:
+        - application/json
+      parameters:
+        - name: zenderOrganisatie
+          in: header
+          description: 'Organisatiecode van de opvragende organisatie (kan zijn een gemeentecode, RSIN, OIN)'
+          required: false
+          type: string
+        - name: zenderApplicatie
+          in: header
+          description: 'Applicatiecode van de opvragende organisatie'
+          required: false
+          type: string
+        - name: zenderGebruiker
+          in: header
+          description: 'Organisatiebrede unieke gebruikerIdentificatie'
+          required: false
+          type: string
+        - name: zenderAdministratie
+          in: header
+          description: 'Administratie of organisatieonderdeel die gegevens opvraagt'
+          required: false
+          type: string          
+        - name: ontvangerOrganisatie
+          in: header
+          description: 'Organisatiecode van de leverende organisatie (kan zijn een gemeentecode, RSIN, OIN)'
+          required: false
+          type: string
+        - name: ontvangerApplicatie
+          in: header
+          description: 'Applicatiecode van de leverende organisatie'
+          required: false
+          type: string
+        - name: ontvangerGebruiker
+          in: header
+          description: 'Organisatiebrede unieke gebruikerIdentificatie'
+          required: false
+          type: string
+        - name: ontvangerAdministratie
+          in: header
+          description: 'Administratie of organisatieonderdeel die gegevens levert'
+          required: false
+          type: string        
+        - name: referentienummer
+          in: header
+          required: false
+          type: string
+        - name: tijdstipbericht
+          in: header
+          required: false
+          type: string
+        - name: entiteittype
+          in: header
+          required: false
+          type: string
+      responses:
+        '200':
+          description: Gelukt
+          schema:
+            $ref: '#/definitions/KadastraleOnroerende'
+    parameters:
+        - name: naam
+          in: query
+          required: true
+          type: string
+definitions:
+  KadastraleOnroerende:
+    type: object
+    properties:
+      kadastraleIdentificatie:
+        type: string
+      datumBeginGeldigheid:
+        type: string
+        format: date-time
+      datumEindeGeldigheid:
+        type: string
+        format: date-time
+      kadastraleGemeentecode:
+        type: string
+      sectie:
+        type: string
+      perceelnummer:
+        type: string
+      appartementsindex:
+        type: string
+      adres:
+        type: object
+        properties:
+          identificatieNummerAanduiding:
+            type: string
+          postcode:
+            type: string
+          huisnummer:
+            type: string
+          huisletter:
+            type: string
+          huisnummertoevoeging:
+            type: string
+          locatiebeschrijving:
+            type: string
+          naamOpenbareRuimte:
+            type: string
+          woonplaatsNaam:
+            type: string
+          woonplaatsIdentificatie:
+            type: string
