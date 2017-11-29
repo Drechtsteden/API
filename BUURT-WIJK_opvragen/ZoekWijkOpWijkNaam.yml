@@ -1,8 +1,8 @@
 swagger: '2.0'
 info:
-  description: Zoek raadpleeg buurt op buurtcode wijkcode gemeentecode
+  description: Zoek wijk op wijknaam
   version: 1.0.0
-  title: Zoek raadpleeg buurt op buurtcode wijkcode gemeentecode
+  title: Zoek wijk op wijknaam
   contact: {}
 host: zaaksysteem.greenvalley.nl
 basePath: /bg
@@ -13,10 +13,10 @@ consumes:
 produces:
   - application/json
 paths:
- /RaadpleegBuurtOpBuurtcodeWijkcodeGemeenteCode:
+ /ZoekWijkOpWijkNaam:
     get:
-      summary:  Zoek raadpleeg buurt op buurtcode wijkcode gemeentecode
-      description: 'Zoek raadpleeg buurt op buurtcode wijkcode gemeentecode'
+      summary: Zoek wijk op wijknaam
+      description: 'Zoek wijk op wijknaam'
       produces:
         - application/json
       parameters:
@@ -76,55 +76,30 @@ paths:
         '200':
           description: Gelukt
           schema:
-            $ref: '#/definitions/Buurt'
+            $ref: '#/definitions/Wijk'
     parameters:
-      - name: buurtCode
+      - name: wijkNaam
         in: query
-        description: 'buurtCode'
+        description: 'wijknNaam'
         required: true
         type: string
-      - name: wijkcode
-        in: query
-        description: 'wijkCode'
-        required: true
-        type: string
-      - name: gemeenteCode
-        in: query
-        description: 'gemeenteCode'
-        required: true
-        type: string        
 definitions:
-  Buurt:
+  Wijk:
     type: object
     properties:
-      buurtCode:
+      wijkCode:
         type: string
-      buurtNaam:
+      wijkNaam:
         type: string
-      buurtGeometrie:
+      wijkGeometrie:
         type: string
-      datumBeginGeldigheidBuurt:
-        type: string
-        format: date-time
-      datumEindeGeldigheidBuurt:
+      datumBeginGeldigheidWijk:
         type: string
         format: date-time
-      wijk:
-        type: object
-        properties:
-          wijkCode:
-            type: string
-          wijkNaam:
-            type: string
-          wijkGeometrie:
-            type: string
-          datumBeginGeldigheidWijk:
-            type: string
-            format: date-time
-          datumEindeGeldigheidWijk:
-            type: string
-            format: date-time
-          gemeenteNaam:
-            type: string
-          gemeenteCode:
-            type: string
+      datumEindeGeldigheidWijk:
+        type: string
+        format: date-time
+      gemeenteNaam:
+        type: string
+      gemeenteCode:
+        type: string

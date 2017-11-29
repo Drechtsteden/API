@@ -1,8 +1,8 @@
 swagger: '2.0'
 info:
-  description: Zoek raadpleeg buurt op buurtcode wijkcode gemeentecode
+  description: Zoek wijk op gemeentnaam
   version: 1.0.0
-  title: Zoek raadpleeg buurt op buurtcode wijkcode gemeentecode
+  title: Zoek wijk op gemeentnaam
   contact: {}
 host: zaaksysteem.greenvalley.nl
 basePath: /bg
@@ -13,10 +13,10 @@ consumes:
 produces:
   - application/json
 paths:
- /RaadpleegBuurtOpBuurtcodeWijkcodeGemeenteCode:
+ /ZoekWijkOpGemeenteNaam:
     get:
-      summary:  Zoek raadpleeg buurt op buurtcode wijkcode gemeentecode
-      description: 'Zoek raadpleeg buurt op buurtcode wijkcode gemeentecode'
+      summary: Zoek wijk op gemeentnaam
+      description: 'Zoek wijk op gemeentnaam'
       produces:
         - application/json
       parameters:
@@ -76,40 +76,15 @@ paths:
         '200':
           description: Gelukt
           schema:
-            $ref: '#/definitions/Buurt'
+            $ref: '#/definitions/Wijk'
     parameters:
-      - name: buurtCode
+      - name: gemeenteNaam
         in: query
-        description: 'buurtCode'
+        description: 'gemeenteNaam'
         required: true
         type: string
-      - name: wijkcode
-        in: query
-        description: 'wijkCode'
-        required: true
-        type: string
-      - name: gemeenteCode
-        in: query
-        description: 'gemeenteCode'
-        required: true
-        type: string        
 definitions:
-  Buurt:
-    type: object
-    properties:
-      buurtCode:
-        type: string
-      buurtNaam:
-        type: string
-      buurtGeometrie:
-        type: string
-      datumBeginGeldigheidBuurt:
-        type: string
-        format: date-time
-      datumEindeGeldigheidBuurt:
-        type: string
-        format: date-time
-      wijk:
+  Wijk:
         type: object
         properties:
           wijkCode:
