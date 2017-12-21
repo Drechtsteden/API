@@ -1,0 +1,178 @@
+swagger: '2.0'
+info:
+  description: Raadpleeg wijk op wijkcode gemeentecode
+  version: 1.0.0
+  title: RaadpleegWijkOpWijkCodeGemeenteCode
+  contact: {}
+host: zaaksysteem.greenvalley.nl
+basePath: /bg
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+ /RaadpleegWijkOpWijkCodeGemeenteCode:
+    get:
+      summary: Raadpleeg wijk op wijkcode gemeentecode
+      description: 'Raadpleeg wijk op wijkcode gemeentecode'
+      produces:
+        - application/json
+      parameters:
+        - name: zenderOrganisatie
+          in: header
+          description: 'Organisatiecode van de opvragende organisatie (kan zijn een gemeentecode, RSIN, OIN)'
+          required: false
+          type: string
+        - name: zenderApplicatie
+          in: header
+          description: 'Applicatiecode van de opvragende organisatie'
+          required: false
+          type: string
+        - name: zenderGebruiker
+          in: header
+          description: 'Organisatiebrede unieke gebruikerIdentificatie'
+          required: false
+          type: string
+        - name: zenderAdministratie
+          in: header
+          description: 'Administratie of organisatieonderdeel die gegevens opvraagt'
+          required: false
+          type: string          
+        - name: ontvangerOrganisatie
+          in: header
+          description: 'Organisatiecode van de leverende organisatie (kan zijn een gemeentecode, RSIN, OIN)'
+          required: false
+          type: string
+        - name: ontvangerApplicatie
+          in: header
+          description: 'Applicatiecode van de leverende organisatie'
+          required: false
+          type: string
+        - name: ontvangerGebruiker
+          in: header
+          description: 'Organisatiebrede unieke gebruikerIdentificatie'
+          required: false
+          type: string
+        - name: ontvangerAdministratie
+          in: header
+          description: 'Administratie of organisatieonderdeel die gegevens levert'
+          required: false
+          type: string        
+        - name: referentienummer
+          in: header
+          required: false
+          type: string
+        - name: tijdstipbericht
+          in: header
+          required: false
+          type: string
+        - name: entiteittype
+          in: header
+          required: false
+          type: string
+      responses:
+        '200':
+          description: Gelukt
+          schema:
+            $ref: '#/definitions/Wijk'
+    parameters:
+      - name: wijkCode
+        in: query
+        description: 'wijkCode'
+        required: true
+        type: string
+      - name: gemeenteCode
+        in: query
+        description: 'gemeenteCode'
+        required: true
+        type: string
+definitions:
+  Wijk:
+    type: object
+    properties:
+      wijkCode:
+        type: string
+        description: 'WIJKCODE'
+      wijkNummer:
+        type: string
+        description: 'WIJKNUMMER'
+      wijkNaam:
+        type: string
+        description: 'WIJKNAAM'
+      wijkGeometrie:
+        type: string
+        description: 'Wijkgeometrie'
+      datumBeginGeldigheidWijk:
+        type: string
+        format: date-time
+        description: 'BEGINDATUM'
+      datumEindeGeldigheidWijk:
+        type: string
+        format: date-time
+        description: 'EINDDATUM'
+      datumCreatie:
+        type: string
+        format: date-time
+        description: 'CREATION'
+      datumInvoer:
+        type: string
+        format: date-time
+        description: 'INGANGSDATUM'
+      datumAfvoer:
+        type: string
+        format: date-time
+        description: 'AFVOERDATUM'
+      status:
+        type: string
+        description: 'STATUS'
+      redenOpvoerCode:
+        type: number
+        description: 'REDENOPVOERCODE'
+      redenOpvoerOmschrijving:
+        type: string
+        description: 'REDENOPVOER OMSCHRIJVING'
+      redenAfvoerCode:
+        type: number
+        description: 'REDENAFVOERCODE'
+      redenAfvoerOmschrijving:
+        type: string
+        description: 'REDENAFVOER OMSCHRIJVING'
+      bronCodeOpvoer:
+        type: string
+        description: 'BRONCODEOPVOER'
+      bronCodeAfvoer:
+        type: string
+        description: 'BRONCODEAFVOER'
+      bronID:
+        type: string
+        description: 'BRON_ID'
+      datumOpvoerPlus:
+        type: string
+        format: date-time
+        description: 'DATUMOPVOERPLUS'
+      # Geen datumAfvoerPlus?
+      gemeenteNaam:
+        type: string
+        description: 'Blijft dit?'
+      gemeenteCode:
+        type: string
+        description: 'Blijft dit?'
+      woonplaatsCode:
+        type: array
+        items:
+          type: object
+          properties:
+            code:
+              type: string
+      document:
+        type: object
+        properties:
+          documentNummer:
+            type: string
+            description: 'DOCMENTNUMMER'
+          documentDatum:
+            type: string
+            format: date-time
+            description: 'DOCUMENTDATUM ..? niet DD_DOCUMENT?'
