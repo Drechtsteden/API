@@ -2,15 +2,7 @@
 
 ### Probleemstelling
 
-De doelstelling van Gemeenschappelijk Regeling Drechtsteden
-(GRD) is om per 1 januari 2018 alle koppelvlakken gerealiseerd te hebben. Het
-realiseren van koppelvlakken betekent voor Drechtsteden dat alle applicaties
-gegevens uitwisselen met elkaar via de centrale servicebus van Vicrea (Neuron
-Integratie Platform). De centrale voorziening waar de servicebus onderdeel van
-uitmaakt wordt binnen Drechtsteden aangeduid met de afkorting "CDV". Met
-de snelheid waarmee gemiddeld genomen huidige StUF-koppelvlakken gerealiseerd
-worden binnen Drechtsteden wordt de datum 1 januari 2018 zeker niet gehaald.
-Dit vraagt om een andere aanpak.
+De doelstelling van Gemeenschappelijk Regeling Drechtsteden (GRD) is om 100% digitaal & 100% zaakgericht te werken. Dit traject zal op de huidige manier nog maanden/jaren in beslag nemen. De snelheid waarmee gemiddeld genomen huidige StUF-koppelvlakken gerealiseerd worden laat te wensen over, mede veroorzaakt door de complexiteit van StUF. Dit vraagt om een andere aanpak. 
 
 ### Initiatief
 
