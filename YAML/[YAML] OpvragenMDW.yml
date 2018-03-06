@@ -43,6 +43,10 @@ paths:
         enum: 
             - J
             - N
+      - name: DATUM_INGANG_GELDIGHEID
+        in: query
+        required: false
+        type: string
   /RaadpleegMedewerkerOpGRID_ID:
     get:
       summary: opvragen van medewerkergegevens op basis van GRID_ID
@@ -108,6 +112,7 @@ definitions:
        description: De voorvoegsels van de geslachtsnaam van de medewerker.
        type: string
       GESLACHTSNAAM:
+       type: string
        description: de geslachtsnaam van de medewerker
       GESLACHTSAANDUIDING:
        description: De aanduiding van het geslacht van de medewerker. 
@@ -221,3 +226,6 @@ definitions:
        enum:
           - J
           - N
+      DATUM_INGANG_GELDIGHEID:
+       type: string
+       description: De datum waarop een record geldig wordt
