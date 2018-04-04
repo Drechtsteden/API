@@ -31,11 +31,11 @@ paths:
       - name: werknemernummer
         in: query
         required: false
-        type: number
+        type: string
       - name: contractnummer
         in: query
         required: false
-        type: number
+        type: string
       - name: Historie
         in: query
         type: string 
@@ -93,15 +93,11 @@ definitions:
        description: De aanschrijfnaam van de medewerker. De achternaam zoals de medewerker die binnen de organisatie wil hanteren.
        type: string
       AFDELINGNUMMER:
-       type: number
        description: De codering van niveau 4 in de te onderscheiden hiërarchie binnen de organisatiestructuur.
-       minLength: 6
-       maxLength: 6
+       type: string
       FUNCTIECODE:
-       type: number
        description: De code van de functie zoals vastgelegd binnen P&O.
-       minLength: 9
-       maxLength: 9
+       type: string
       ROEPNAAM:
        description: De roepnaam zoals de medewerker die binnen de organisatie wil hanteren.
        type: string
@@ -128,17 +124,13 @@ definitions:
        type: string 
       CONTRACTNUMMER: 
        description: Het contractnummer dit specifieke dienstverband.
-       type: number
-       minLength: 1
-       maxLength: 3
+       type: string
       GRID_ID:
        description: Het gebruikersaccount van de medewerker voor dit specifieke dienstverband.
        type: string
       WERKNEMERNUMMER:
-        type: number
         description: Het unieke nummer waaronder een medewerker is geregistreerd binnen applicatie ADP van afdeling P&O.
-        minLength: 1
-        maxLength: 38
+        type: string
       EINDDATUM_CONTRACT:
        description: Daadwerkelijke einddatum dienstverband.
        type: string
