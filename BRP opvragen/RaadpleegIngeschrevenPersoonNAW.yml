@@ -125,8 +125,8 @@ definitions:
         type: string
       Verblijfsadres:
         $ref: '#/definitions/Verblijfsadres'
-      Adresbuitenland:
-        $ref: '#/definitions/Adresbuitenland'
+      AdresBuitenland:
+        $ref: '#/definitions/AdresBuitenland'
       burgerservicenummer:
         type: integer
       aanduidingNaamgebruik:
@@ -209,8 +209,8 @@ definitions:
         type: string
       Verblijfsadres:
         $ref: '#/definitions/Verblijfsadres'
-      Adresbuitenland:
-        $ref: '#/definitions/Adresbuitenland'
+      AdresBuitenland:
+        $ref: '#/definitions/AdresBuitenland'
   Verblijfsadres:
         type: object
         properties:
@@ -241,7 +241,7 @@ definitions:
             type: string
           woonplaatsIdentificatie:
             type: string
-  Adresbuitenland:
+  AdresBuitenland:
         type: object
         properties:
           landcode:
@@ -249,11 +249,11 @@ definitions:
             properties:
               landnaam:
                 type: string
-              adresBuiteland1:
+              adresBuitenland1:
                 type: string
-              adresBuiteland2:
+              adresBuitenland2:
                 type: string
-              adresBuiteland3:
+              adresBuitenland3:
                 type: string
       
         
