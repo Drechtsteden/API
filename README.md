@@ -2,7 +2,7 @@
 
 ### Probleemstelling
 
-De doelstelling van Gemeenschappelijk Regeling Drechtsteden (GRD) is om 100% digitaal & 100% zaakgericht te werken. Dit traject zal op de huidige manier nog maanden/jaren in beslag nemen. De snelheid waarmee gemiddeld genomen huidige StUF-koppelvlakken gerealiseerd worden laat te wensen over, mede veroorzaakt door de complexiteit van StUF. Dit vraagt om een andere aanpak. 
+De doelstelling van Gemeenschappelijk Regeling Drechtsteden (GRD) is om 100% digitaal te werken. Dit traject zal op de huidige manier nog maanden/jaren in beslag nemen. De snelheid waarmee gemiddeld genomen huidige StUF-koppelvlakken gerealiseerd worden laat te wensen over, mede veroorzaakt door de complexiteit van StUF. Dit vraagt om een andere aanpak. 
 
 ### Initiatief
 
@@ -12,61 +12,41 @@ de ambitie te kunnen realiseren.
 
 ### Samenwerking
 
-In samenwerking met softwareleveranciers Vicrea, Green Valley
-en Centric wordt de oplossing gerealiseerd binnen Gemeenschappelijke Regeling
-Drechtsteden. Waarbij Solventa een belangrijke rol speelt in het inhoudelijk
-aansturen van het traject, conform door Solventa begin 2017 opgestelde principes
-voor het opzetten van Eindproductstandaarden (zie 
-[Gemmaonline.nl](http://www.gemmaonline.nl/images/gemmaonline/0/08/Eindproductstandaarden_-_vervanging_StUF-BG_en_StUF-ZKN.pdf
-"Advies Eindproductstandaarden Solventa"))
+In samenwerking met softwareleveranciers Vicrea en Green Valley is er gewerkt aan een oplossing binnen Gemeenschappelijke Regeling
+Drechtsteden, waarbij Drechtsteden zelf een belangrijke rol heeft gespeeld in het inhoudelijk
+aansturen van het traject.
 
 
 # Context
 
-De aanpak die Drechtsteden kiest is in lijn met het advies
-dat Solventa in opdracht van KING heeft uitgebracht over het opstellen van
-Eindproductstandaarden ter vervanging van StUF-BG en StUF-ZKN. Hieronder een
-opsomming van de voordelen van Eindproductstandaarden die in dit advies benoemd
-worden:
+De aanpak die Drechtsteden in 2017 heeft gekozen is in lijn met het toenmalige advies
+dat Solventa in opdracht van KING in 2017 heeft uitgebracht over het opstellen van (destijds nog)
+Eindproductstandaarden ter vervanging van StUF-BG en StUF-ZKN. Inmiddels zijn er op landelijk niveau onder aanvoering van het API Kennisplatform richtlijnen opgesteld voor het opstellen van API's. De huidige richtlijnen zijn te vinden op https://geonovum.github.io/KP-APIs/. 
 
-- Eindproductstandaarden kunnen in hoger tempo worden
-opgesteld door KING.
+Hieronder een opsomming van de voordelen van API's:
+
+- API's kunnen in hoger tempo worden
+gerealiseerd.
 
 - Aanbieders van applicaties kunnen eenvoudiger/goedkoper aan
-eindproductstandaarden voldoen aangezien deze minder complex zijn.
+API's voldoen aangezien deze minder complex zijn.
 
-- Eindproductstandaarden zijn toegesneden op ketens en/of
+- API's zijn toegesneden op ketens en/of
 afgebakend op een domein en daarmee specifieker.
 
-- De eindproductstandaarden reduceren de ruimte voor
+- API's reduceren de ruimte voor
 interpretatieverschillen tot nihil.
 
-- KING kan de conformiteit aan eindproductstandaarden eenvoudiger
+- VNG Realisatie kan de conformiteit aan API's eenvoudiger
 toetsen.
 
-- Door de inzet van eindproductstandaarden is de rolverdeling
+- Door de inzet van API's is de rolverdeling
 tussen applicaties scherp gedefinieerd. 
 
 Het advies is omarmd door de StUF Regiegroep en wordt als
 leidraad gehanteerd voor de opzet van de 'nieuwe StUF'. De nieuwe StUF is niet
 radicaal anders, het borduurt zo veel mogelijk voort op de goede aspecten van StUF
 en andere vastgestelde specificaties zoals LO GBA, RSGB en RGBZ.
-
-### Nieuwe StUF
-
-Met het omarmen van het advies gaat KING koersen richting een
-nieuwe StUF. Veel is er onduidelijk over hoe dit traject er uit gaat zien. Een
-feit is dat Drechtsteden graag de nek uitsteekt en leveranciers bij elkaar
-brengt om conform eerder genoemd advies koppelvlakken te realiseren.
-Leveranciers Vicrea en Green Valley zijn inmiddels druk bezig de eerste
-koppelvlakken te realiseren op basis van JSON. Met deze resultaten gaat
-Drechtsteden bij KING aantonen dat er inderdaad vele voordelen te behalen zijn
-met de inzet van Eindproductstandaarden en de technische mogelijkheden van
-JSON. Dit soort praktijkvoorbeelden heeft KING nodig om de route naar een
-nieuwe StUF te concretiseren.
-
-Drechtsteden zelf is er daarnaast van overtuigd dat op deze
-wijze de koppelvlakken wel op 1 januari 2018 gerealiseerd kunnen zijn.
 
 ### Aansluitkeuze 
 
