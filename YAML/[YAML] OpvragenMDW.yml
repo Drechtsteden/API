@@ -1,7 +1,7 @@
 ﻿swagger: '2.0'
 info:
   description: Specificatie StUF Json opvragen medewerker gegevens
-  version: 1.0.0
+  version: 1.1.0
   title: Kernregistratie Medewerker
   contact: {}
 host: localhost
@@ -89,128 +89,147 @@ definitions:
  kernregistratie_medewerker:
    type: object
    properties:
-      AANSCHRIJFNAAM:
-       description: De aanschrijfnaam van de medewerker. De achternaam zoals de medewerker die binnen de organisatie wil hanteren.
-       type: string
-      AFDELINGNUMMER:
-       description: De codering van niveau 4 in de te onderscheiden hiërarchie binnen de organisatiestructuur.
-       type: string
-      FUNCTIECODE:
-       description: De code van de functie zoals vastgelegd binnen P&O.
-       type: string
+      WERKNEMERNUMMER:
+        description: Het unieke nummer waaronder een medewerker is geregistreerd binnen applicatie ADP van afdeling P&O
+        type: string
+      VOORNAMEN:
+        description: de voornamen van de medewerker
       ROEPNAAM:
-       description: De roepnaam zoals de medewerker die binnen de organisatie wil hanteren.
+       description: De roepnaam zoals de medewerker die binnen de organisatie wil hanteren
        type: string
       VOORLETTERS:
-       description: De voorletters van de medewerker.
+       description: De voorletters van de medewerker
        type: string
-      VOORVOEGSEL:
-       description: De voorvoegsels van de geslachtsnaam van de medewerker.
+      VOORVOEGSEL_ACHTERNAAM:
+       description: De voorvoegsels van de geslachtsnaam van de medewerker
        type: string
-      GESLACHTSNAAM:
+      ACHTERNAAM:
        type: string
-       description: de geslachtsnaam van de medewerker
+       description: de achternaam van de medewerker
+      VOORVOEGSEL_AANSCHRIJFNAAM:
+       description: De voorvoegsels van de aanschrijfnaam van de medewerker.
+       type: string
+      AANSCHRIJFNAAM:
+       description: De aanschrijfnaam van de medewerker. De achternaam zoals de medewerker die binnen de organisatie wil hanteren
+       type: string
+      VOORVOEGSEL_PARTNER:
+       description: De voorvoegsels van de geslachtsnaam van de partner van de medewerker
+       type: string
+      GESLACHTSNAAM_PARTNER:
+       type: string
+       description: de geslachtsnaam van de partner van de medewerker
+      SAMENSTELLING_AANSCHRIJFNAAM
+       description: de manier waarop de aanschrijfnaam wordt opgebouwd
       GESLACHTSAANDUIDING:
-       description: De aanduiding van het geslacht van de medewerker. 
+       description: De aanduiding van het geslacht van de medewerker 
        type: string 
        enum:
           - M
           - V
-      STANDPLAATS:
-       description: Het adres van de standplaats.
-       type: string
-      KAMERNUMMER:
-       description: Het kamernummer van de kamer waar de medewerker zijn werkplek heeft.
-       type: string 
-      CONTRACTNUMMER: 
-       description: Het contractnummer dit specifieke dienstverband.
-       type: string
-      GRID_ID:
-       description: Het gebruikersaccount van de medewerker voor dit specifieke dienstverband.
-       type: string
-      WERKNEMERNUMMER:
-        description: Het unieke nummer waaronder een medewerker is geregistreerd binnen applicatie ADP van afdeling P&O.
-        type: string
-      EINDDATUM_CONTRACT:
-       description: Daadwerkelijke einddatum dienstverband.
-       type: string
-      EMAILADRES:
-       description: Het e-mailadres van de medewerker waarop de medewerker binnen de organisatie bereikt wil worden.
-       type: string
       WERK_TELEFOONNUMMER_VAST:
-       description: Het vaste telefoonnummer van de medewerker waarop de medewerker binnen de organisatie bereikt wil worden.
+       description: Het vaste telefoonnummer van de medewerker waarop de medewerker binnen de organisatie bereikt wil worden
        type: string
       WERK_TELEFOONNUMMER_MOBIEL:
-       description: Het mobiele telefoonnummer van de medewerker waarop de medewerker binnen de organisatie bereikt wil worden.
+       description: Het mobiele telefoonnummer van de medewerker waarop de medewerker binnen de organisatie bereikt wil worden
        type: string
+      GRID_ID:
+       description: Het gebruikersaccount van de medewerker voor dit specifieke dienstverband
+       type: string
+      CONTRACTNUMMER: 
+       description: Het contractnummer dit specifieke dienstverband
+       type: string
+      REDEN_TOEWIJZING:
+       description: Reden van toewijzing arbeidscontract
+      SOORT_ARBEIDSRELATIE:
+       description: De soort arbeidsrelatie van de medewerker
+      DIRECT_LEIDINGGEVENDE:
+       description: De unieke identificaties (werknemernummer) van de leidinggevende(n) 
       INGANGSDATUM_CONTRACT:
-       description: Ingangsdatum dienstverband.
+       description: Ingangsdatum dienstverband
        type: string
       EINDDATUM_CONTRACT_BEOOGD:
-       description: Geplande einddatum dienstverband.
+       description: Geplande einddatum dienstverband
+       type: string
+      EINDDATUM_CONTRACT:
+       description: Daadwerkelijke einddatum dienstverband
        type: string
       KLANTNUMMER:
-       description: Code van het organisatie onderdeel waar dit dienstverband door betaald wordt.
+       description: Code van het organisatie onderdeel waar dit dienstverband door betaald wordt
        type: string
       KLANTOMSCHRIJVING:
-       description: Omschrijving van het organisatie onderdeel waar dit dienstverband door betaald wordt.
+       description: Omschrijving van het organisatie onderdeel waar dit dienstverband door betaald wordt
        type: string
       MOEDERAFDELING:
-       description: De codering van niveau 1 in de te onderscheiden hiërarchie binnen de organisatiestructuur.
+       description: De codering van niveau 1 in de te onderscheiden hiërarchie binnen de organisatiestructuur
        type: string
       MOEDER_AFKORTING:
-       description: De afkorting van niveau 1 in de te onderscheiden hiërarchie binnen de organisatiestructuur.
+       description: De afkorting van niveau 1 in de te onderscheiden hiërarchie binnen de organisatiestructuur
        type: string
       MOEDERAFDELING_OMSCHRIJVING:
        description: De omschrijving van de moederafdeling
        type: string
       DIENSTNUMMER:
-       description: De codering van niveau 2 in de te onderscheiden hiërarchie binnen de organisatiestructuur.
+       description: De codering van niveau 2 in de te onderscheiden hiërarchie binnen de organisatiestructuur
        type: string
       DIENSTOMSCHRIJVING:
-       description: De omschrijving van niveau 2 in de te onderscheiden hiërarchie binnen de organisatiestructuur.
+       description: De omschrijving van niveau 2 in de te onderscheiden hiërarchie binnen de organisatiestructuur
        type: string
       DIENST_AFKORTING:
-       description: De afkorting van niveau 2 in de te onderscheiden hiërarchie binnen de organisatiestructuur.
+       description: De afkorting van niveau 2 in de te onderscheiden hiërarchie binnen de organisatiestructuur
        type: string
       SECTORNUMMER:
-       description: De codering van niveau 3 in de te onderscheiden hiërarchie binnen de organisatiestructuur.
+       description: De codering van niveau 3 in de te onderscheiden hiërarchie binnen de organisatiestructuur
        type: string
       SECTOROMSCHRIJVING:
-       description: De omschrijving van niveau 3 in de te onderscheiden hiërarchie binnen de organisatiestructuur.
+       description: De omschrijving van niveau 3 in de te onderscheiden hiërarchie binnen de organisatiestructuur
        type: string
       SECTOR_AFKORTING:
-       description: De afkorting van niveau 3 in de te onderscheiden hiërarchie binnen de organisatiestructuur.
+       description: De afkorting van niveau 3 in de te onderscheiden hiërarchie binnen de organisatiestructuur
+       type: string
+      AFDELINGNUMMER:
+       description: De codering van niveau 4 in de te onderscheiden hiërarchie binnen de organisatiestructuur
        type: string
       AFDELINGOMSCHRIJVING:
-       description: De omschrijving van niveau 4 in de te onderscheiden hiërarchie binnen de organisatiestructuur.
+       description: De omschrijving van niveau 4 in de te onderscheiden hiërarchie binnen de organisatiestructuur
        type: string
       AFDELING_AFKORTING:
-       description: De afkorting van niveau 4 in de te onderscheiden hiërarchie binnen de organisatiestructuur.
+       description: De afkorting van niveau 4 in de te onderscheiden hiërarchie binnen de organisatiestructuur
        type: string
       BUREAUNUMMER:
-       description: De codering van niveau 5 in de te onderscheiden hiërarchie binnen de organisatiestructuur.
+       description: De codering van niveau 5 in de te onderscheiden hiërarchie binnen de organisatiestructuur
        type: string
       BUREAUOMSCHRIJVING:
-       description: De omschrijving van niveau 5 in de te onderscheiden hiërarchie binnen de organisatiestructuur.
+       description: De omschrijving van niveau 5 in de te onderscheiden hiërarchie binnen de organisatiestructuur
        type: string
       BUREAU_AFKORTING:
-       description: De afkorting van niveau 5 in de te onderscheiden hiërarchie binnen de organisatiestructuur.
+       description: De afkorting van niveau 5 in de te onderscheiden hiërarchie binnen de organisatiestructuur
        type: string
       UNITNUMMER:
-       description: De codering van niveau 6 in de te onderscheiden hiërarchie binnen de organisatiestructuur.
+       description: De codering van niveau 6 in de te onderscheiden hiërarchie binnen de organisatiestructuur
        type: string
       UNITOMSCHRIJVING: 
-       description: De omschrijving van niveau 6 in de te onderscheiden hiërarchie binnen de organisatiestructuur.
+       description: De omschrijving van niveau 6 in de te onderscheiden hiërarchie binnen de organisatiestructuur
        type: string
       UNIT_AFKORTING:
-       description: De omschrijving van niveau 6 in de te onderscheiden hiërarchie binnen de organisatiestructuur.
+       description: De omschrijving van niveau 6 in de te onderscheiden hiërarchie binnen de organisatiestructuur
        type: string
       ORGANISATIESTRUCTUUR:
-       description: Een samenstelling van de afkortingen van de niveaus van organisatorische eenheden, gescheiden door "/".
+       description: Een samenstelling van de afkortingen van de niveaus van organisatorische eenheden, gescheiden door "/"
+       type: string
+      FUNCTIECODE:
+       description: De code van de functie zoals vastgelegd binnen P&O
        type: string
       FUNCTIEOMSCHRIJVING: 
        description: De omschrijving van de functie zoals vastgelegd binnen P&O (globale functieomschrijving)
+       type: string
+      KAMERNUMMER:
+       description: Het kamernummer van de kamer waar de medewerker zijn werkplek heeft
+       type: string 
+      STANDPLAATS:
+       description: Het adres van de standplaats
+       type: string
+      EMAILADRES:
+       description: Het e-mailadres van de medewerker waarop de medewerker binnen de organisatie bereikt wil worden
        type: string
       HISTORIE:
        description: Is de opgevraagde persoon in dienst of is deze uitdienst
