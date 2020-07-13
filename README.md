@@ -161,8 +161,7 @@ Opgeleverde specificaties
 ---
 
 Heb je vragen of opmerkingen over dit traject: neem contact op met
-Dennis de Wit (d.de.wit@drechtsteden.nl of [LinkedIn](https://www.linkedin.com/in/dennis-de-wit-57ba8a20/
-"Dennis de Wit"))
+Reinier Vaneker (RAL.Vaneker@drechtsteden.nl).
 
  
 
