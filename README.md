@@ -1,3 +1,5 @@
+## Deze repo is al lange tijd niet meer actief en is daarom gearchiveerd.
+
 # Ambitie Gemeenschappelijke Regeling Drechtsteden
 
 ### Probleemstelling
